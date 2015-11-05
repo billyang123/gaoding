@@ -14,6 +14,7 @@
 		assetsPath : "<?php echo $staticDomain ?>"
 	}
 	</script>
+	<script type="text/javascript" src="<?php echo $staticDomain?>/lib/mobile-util.js"></script>
 	<script type="text/javascript" src="<?php echo $staticDomain?>/lib/Qmik-debug.all.js"></script>
 	<script type="text/javascript" src="<?php echo $staticDomain?>/config/config.js"></script>
 </head>

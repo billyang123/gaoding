@@ -70,7 +70,7 @@ module.exports = function(grunt) {
     };
     config.watch = {
         develop: {
-            files: ["dev/less/*.less"],
+            files: ["dev/less/*.less","dev/less/**/*.less"],
             tasks: ["less:develop"]
         }
     };
