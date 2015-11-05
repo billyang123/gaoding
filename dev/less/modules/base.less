@@ -1,5 +1,4 @@
-@charset "utf-8";
-
+@ppr:750px/16/1rem;
 html {
     color: #000;
     background: #fff;
@@ -16,6 +15,7 @@ html * {
 
 html, body {
     font-family: sans-serif;
+    font-size: @ppr*1rem;
 }
 
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
@@ -103,4 +103,9 @@ a:hover {
 /* 默认不显示下划线，保持页面简洁 */
 ins, a {
     text-decoration: none;
+}
+
+
+.cf {
+  .clearfix();
 }

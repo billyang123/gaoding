@@ -149,6 +149,17 @@ a {
 .cf:after {
   clear: both;
 }
+.taglist .tag {
+  display: inline-block;
+  float: left;
+  margin: 0 0.42666667rem 0.42666667rem 0;
+  padding: 0.17066667rem 0.46933333rem;
+  font-size: 0.46933333rem;
+  background-color: #eaeeef;
+  border-radius: 0.17066667rem;
+  color: #464f54;
+  font-weight: bold;
+}
 /*.@{ns}panel-variant(@border; @hd-text-color; @hd-bg-color; @hd-border) {
   border-color: @border;
 
