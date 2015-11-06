@@ -1,3 +1,6 @@
+<?php $staticDomain = '/dev';?>
+<script type="text/javascript" src="<?php echo $staticDomain?>/lib/Qmik-debug.all.js"></script>
+<script type="text/javascript" src="<?php echo $staticDomain?>/config/config.js"></script>
 <link rel="stylesheet" type="text/css" href="/dev/styles/index.css">
 <h3>收复失地</h3>
 <div class="taglist cf">
