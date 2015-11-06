@@ -13,7 +13,7 @@ html * {
 html,
 body {
   font-family: sans-serif;
-  font-size: 46.875px;
+  font-size: 0.512rem;
 }
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
 body,
@@ -141,13 +141,8 @@ ins,
 a {
   text-decoration: none;
 }
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-.cf:after {
-  clear: both;
+body {
+  background-color: #f6f6f6;
 }
 /*.@{ns}panel-variant(@border; @hd-text-color; @hd-bg-color; @hd-border) {
   border-color: @border;
@@ -182,11 +177,14 @@ a {
 /* Panel header */
 .panel-hd {
   padding: 0.64rem;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #e5e5e5;
 }
 /* Panel content */
 .panel-bd {
   padding: 0.64rem;
+}
+.panel-bd .panel-title {
+  color: #464f54;
 }
 .panel-title {
   margin: 0;
@@ -278,15 +276,40 @@ a {
   border-bottom: 0;
 }
 /* Wrap list */
-[data-dpr="1"] .panel-title {
-  font-size: 30px;
+.panel > .list {
+  margin: 0;
 }
-[data-dpr="1"] .panel-bd {
-  font-size: 26px;
+.panel > .list > li > a {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-[data-dpr="2"] .panel-title {
-  font-size: 60px;
+.panel > .list-static li {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-[data-dpr="2"] .panel-bd {
-  font-size: 52px;
+/* Panel group */
+.panel-group {
+  margin-bottom: 0rem;
+}
+.panel-group .panel {
+  border-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.panel-group .panel.first-child {
+  border-top: 1px solid #dddddd;
+}
+.panel-title {
+  font-size: 0.64rem;
+  font-weight: bold;
+}
+.panel-bd {
+  font-size: 0.55466667rem;
+}
+.panel-more {
+  height: 1.92rem;
+  line-height: 1.92rem;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.64rem;
+  cursor: pointer;
 }
