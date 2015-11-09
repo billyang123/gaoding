@@ -1,5 +1,1 @@
-define("module/test", [], function(require, exports, module) {
-    var b = window;
-    var c = 111;
-    module.exports = c;
-});
+define(function(a,b,c){var d=(window,111);c.exports=d});

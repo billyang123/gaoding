@@ -1,7 +1,7 @@
 <?php $staticDomain = '/dev';?>
-<script type="text/javascript" src="<?php echo $staticDomain?>/jquery/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="<?php echo $staticDomain?>/original/jquery.flexslider-min.js"></script>
-<link rel="stylesheet" type="text/css" href="/dev/styles/index.css">
+<script type="text/javascript" src="<?php echo $staticDomain?>/lib/jquery/jquery-1-7-2-min.js"></script>
+<script type="text/javascript" src="<?php echo $staticDomain?>/plugins/flexslider/jqueryflexslider-min.js"></script>
+<link rel="stylesheet" type="text/css" href="/dev/styles/zfw-list.css">
 <div class="flexslider">
 	<ul class="slides">
 		<li style="background:url(/images/flexslider/img1.jpg) 50% 0 no-repeat;"></li>
@@ -11,7 +11,59 @@
 		<li style="background:url(/images/flexslider/img5.jpg) 50% 0 no-repeat;"></li>
 	</ul>
 </div>
-
+<div class="zfw-list-nav">
+	<ul class="cf">
+		<li>
+			<div>
+				<i class="icon icon-zp"></i>
+				<span>招聘</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-fl"></i>
+				<span>法律</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-gl"></i>
+				<span>管理</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-yx"></i>
+				<span>营销</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-jr"></i>
+				<span>金融</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-hlw"></i>
+				<span>互联网</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-px"></i>
+				<span>培训</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-qt"></i>
+				<span>其它</span>
+			</div>
+		</li>
+	</ul>
+</div>
+<h3 class="main-title">精选服务</h3>
 <div class="panel-group">
 	<div class="panel">
 		<div class="panel-bd">
