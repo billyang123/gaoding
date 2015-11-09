@@ -1,1 +1,0 @@
-define(function(a,b,c){a("test");var d=(window,222);c.exports=d});
