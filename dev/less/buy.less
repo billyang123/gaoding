@@ -1,0 +1,56 @@
+@ppr:750px/16/1rem;
+@import "modules/base.less";
+@import "modules/panel.less";
+@import "modules/button.less";
+.font-size(@size){
+    font-size: (@size);
+}
+.height(@height){
+    height:@height;
+    line-height: @height;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.background-size(@bgsize) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
+.buy-header{
+	padding: 47px 0px;
+	width:100%;
+}
+.firstOn{
+	width:100%;
+	background: url("/images/firstOn.png") no-repeat;
+	.background-size(cover);
+	height:66/@ppr;
+	li{
+		width:100/3%;
+		.height(66/@ppr);
+		text-align: center;
+		color: #fff;
+		float: left;
+		.font-size(28/@ppr);
+	}
+}
+.panel{
+	width:100%;
+	float: left;
+}
+.panel-item{
+  padding: 0 30/@ppr;
+}
+.panel-item-title{
+  .font-size(28/@ppr);
+  width:30%;
+  float: left;
+  .height(100/@ppr);
+}
+.panel-contain{
+  border: none;
+  .height(100/@ppr);
+}
