@@ -1,6 +1,6 @@
 var fs = require("fs");
 var path = require("path");
-var assetsPath = "build";
+var assetsPath = "../build";
 var stylesPath = "dev/styles";
 function stylesFilesFn(path,dest){
 	var _lessdir = {};
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 	            compress: !isBeautify,
 	            ieCompat: true
 	        },
-            files: stylesFilesFn("dev/less",assetsPath+"/styles")
+            files: stylesFilesFn("less",assetsPath+"/styles")
         },
         develop: {
         	options: {
@@ -64,116 +64,76 @@ module.exports = function(grunt) {
 	            compress: false,
 	            ieCompat: true
 	        },
-            files:stylesFilesFn("dev/less","dev/styles")
+            files:stylesFilesFn("less","styles")
         }
     };
-    config.cssmin = {
-        options: {
-            keepSpecialComments: 0,
-            report: "min"
-        },
-        release: {
-            files: [
-                {
-                    src: ["**/*.css"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".css",
-                    cwd: "dev",
-                    filter: "isFile"
-                }
-            ]
-        }
-    };
+    // config.cssmin = {
+    //     options: {
+    //         keepSpecialComments: 0,
+    //         report: "min"
+    //     },
+    //     release: {
+    //         files: [
+    //             {
+    //                 src: ["**/*.css"],
+    //                 dest: assetsPath,
+    //                 expand: true,
+    //                 ext: ".css",
+    //                 cwd: "styles",
+    //                 filter: "isFile"
+    //             }
+    //         ]
+    //     }
+    // };
     config.copy = {
         release: {
             files: [
                 {
-                    src: ["**/*.js"],
+                    src: ["lib/**/*.js","plugins/**/*.js","scripts/**/*.js","styles/**/*.js"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".js",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 },
                 {
-                    src: ["**/*.png"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".png",
-                    cwd: "dev",
-                    filter: "isFile"
-                },
-                {
-                    src: ["**/*.jpg"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".jpg",
-                    cwd: "dev",
-                    filter: "isFile"
-                },
-                {
-                    src: ["**/*.cur"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".cur",
-                    cwd: "dev",
-                    filter: "isFile"
-                },
-                {
-                    src: ["**/*.jpeg"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".jpeg",
-                    cwd: "dev",
-                    filter: "isFile"
-                },
-                {
-                    src: ["**/*.gif"],
-                    dest: assetsPath,
-                    expand: true,
-                    ext: ".gif",
-                    cwd: "dev",
-                    filter: "isFile"
-                },
-                {
-                    src: ["**/*.eot"],
+                    src: ["fonts/**/*.eot"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".eot",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 },
                 {
-                    src: ["**/*.otf"],
+                    src: ["fonts/**/*.otf"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".otf",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 },
                 {
-                    src: ["**/*.svg"],
+                    src: ["fonts/**/*.svg"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".svg",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 },
                 {
-                    src: ["**/*.ttf"],
+                    src: ["fonts/**/*.ttf"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".ttf",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 },
                 {
-                    src: ["**/*.woff"],
+                    src: ["fonts/**/*.woff"],
                     dest: assetsPath,
                     expand: true,
                     ext: ".woff",
-                    cwd: "dev",
+                    cwd: "../dev",
                     filter: "isFile"
                 }
             ]
@@ -215,7 +175,7 @@ module.exports = function(grunt) {
     var tasks = [
         "copy",
         "less:release",
-        "cssmin"
+        //"cssmin"
         //"cmd_transport"
         //"cmd_concat"
     ];
@@ -226,7 +186,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-cmd-nice");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-less");
-    grunt.loadNpmTasks("grunt-contrib-cssmin");
+    //grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.registerTask('test', [
