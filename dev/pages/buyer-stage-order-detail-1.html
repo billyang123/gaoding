@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- begain头部引入 -->
+    <script>window.mobileUtil=function(a,b){var c=navigator.userAgent,d=/android|adr/gi.test(c),e=/iphone|ipod|ipad/gi.test(c)&&!d,f=d||e;return{isAndroid:d,isIos:e,isMobile:f,isNewsApp:/NewsApp\/[\d\.]+/gi.test(c),isWeixin:/MicroMessenger/gi.test(c),isQQ:/QQ\/\d/gi.test(c),isYixin:/YiXin/gi.test(c),isWeibo:/Weibo/gi.test(c),isTXWeibo:/T(?:X|encent)MicroBlog/gi.test(c),tapEvent:f?"tap":"click",fixScreen:function(){function c(a){return"initial-scale="+a+",maximum-scale="+a+",minimum-scale="+a}var d=b.querySelector('meta[name="viewport"]'),g=d?d.content:"",h=g.match(/initial\-scale=([\d\.]+)/),i=g.match(/width=([^,\s]+)/);if(d){if(f&&!h&&i&&"device-width"!=i[1]){var j=parseInt(i[1]),k=a.innerWidth||j,l=a.outerWidth||k,m=a.screen.width||k,n=a.screen.availWidth||k,o=a.innerHeight||j,p=a.outerHeight||o,q=a.screen.height||o,r=a.screen.availHeight||o,s=Math.min(k,l,m,n,o,p,q,r),t=s/j;1>t&&(d.content=g+","+c(t))}}else{var u,v=b.documentElement,w=v.dataset.mw||750,x=e?Math.min(a.devicePixelRatio,3):1,t=1/x;v.removeAttribute("data-mw"),v.dataset.dpr=x,d=b.createElement("meta"),d.name="viewport",d.content=c(t),v.firstElementChild.appendChild(d);var y=function(){var a=v.getBoundingClientRect().width;a/x>w&&(a=w*x);var b=a/16;v.style.fontSize=b+"px"};a.addEventListener("resize",function(){clearTimeout(u),u=setTimeout(y,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(u),u=setTimeout(y,300))},!1),y()}},getSearch:function(b){b=b||a.location.search;var c={},d=new RegExp("([^?=&]+)(=([^&]*))?","g");return b&&b.replace(d,function(a,b,d,e){c[b]=e}),c}}}(window,document),mobileUtil.fixScreen();</script>
+    <script src="/dev/lib/seajs/sea.js"></script>
+    <script>window.HEALTH = {assetsPath:"/dev"}</script>
+    <script src="/dev/lib/config/seajs-config.js"></script>
+	<!-- end头部引入 -->
+    <title>seajsTest</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="/dev/styles/order-detial.css">
+<div class="panel">
+	<div class="panel-hd">
+		<h3 class="panel-title">订单状态</h3>
+	</div>
+	<div class="panel-bd order-status">
+		<ul>
+			<li class="active">
+				<p>你购买了服务</p>
+				<div class="time">2015-10-25 16:30:28</div>	
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="panel-group">
+	<div class="panel">
+		<div class="panel-hd">
+			<h3 class="panel-title">购买服务</h3>
+		</div>
+		<div class="panel-bd">
+			<h3 class="panel-title">量身定制一篇百万量级的公关文案</h3>
+			<div class="gd-price">
+				<span class="rem">¥</span>
+				<span class="price">5000</span>
+				<span class="per">/ 次</span>
+			</div>
+			<div class="gdt-card">
+				<span class="userimgbox"><img class="userimg circle" src="http://renheuserfaceimages.b0.upaiyun.com/images/headnone.jpg"></span>
+				<p>杨波   阿里巴巴  /  新媒体运营经理</p>
+			</div>
+			<div class="gdt-contacts cf">
+				<span class="ft-gray">卖家电话</span>
+				<span class="ft-bs">00000000000</span>
+				<i class="iconfont icon-right fr">&#xe60c;</i>
+			</div>
+		</div>
+		<ul class="detial-list tran-slide up">
+			<li class="item">
+				<span class="tt">联系人</span>
+				<span class="tb">用户名</span>
+			</li>
+			<li class="item">
+				<span class="tt">联系电话</span>
+				<span class="tb">189752256</span>
+			</li>
+			<li class="item">
+				<span class="tt">地区</span>
+				<span class="tb">杭州</span>
+			</li>
+			<li class="item">
+				<span class="tt">从事行业</span>
+				<span class="tb">互联网</span>
+			</li>
+			<li class="item">
+				<span class="tt">工作年限</span>
+				<span class="tb">6年</span>
+			</li>
+			<li class="item">
+				<span class="tt">当前公司</span>
+				<span class="tb">集团</span>
+			</li>
+			<li class="item">
+				<span class="tt">职业</span>
+				<span class="tb">品牌公关</span>
+			</li>
+			<li class="item">
+				<span class="tt">需求描述</span>
+				<div class="tb">从我们实际中对需求的描述来看，在描述需 求的时候难道就要去想这个需求会发生变更， 而且还考虑每个需求的变更影响。</div>
+			</li>
+		</ul>
+		<div class="panel-footer js-slide">
+			<p class="text-center ft-gray">
+				<i class="iconfont icon-icon08"></i>展开详情
+			</p>
+		</div>
+	</div>
+</div>
+<div class="panel mt20">
+	<div class="panel-hd">
+		<h3 class="panel-title">支付阶段</h3>
+	</div>
+	<ul class="gdm-list pay-status fs28">
+		<li class="cf js-pay js-pay-1">
+			<div class="s1 fl text-right">
+				<i class="iconfont ft-red icon-nckradio"></i>
+				<input type="radio" name="all" style="display:none;">
+			</div>
+			<div class="s2 fl"><span class="ft-bs">全额支付</span></div>
+			<div class="s3 fl"><em class="ft-bs">￥4500.00</em></div>
+		</li>
+		<li class="cf js-pay js-pay-2">
+			<div class="s1 fl text-right">
+				<i class="iconfont ft-red icon-radio"></i>
+				<input type="radio" name="step" style="display:none;">
+			</div>
+			<div class="s2 fl"><span class="ft-bs">分阶段支付</span></div>
+			<div class="s3 fl"><em class="ft-bs">￥1500.00</em></div>
+		</li>
+		<li class="cf js-pay js-pay-2">
+			<div class="s1 fl"></div>
+			<div class="s2 fl cf">
+				<span class="fl">
+					<i class="iconfont ft-red icon-radio"></i>
+					<input type="radio" name="step1" style="display:none;">
+				</span>
+				<span class="ft-bs fl">阶段1</span>
+			</div>
+			<div class="s3 fl"><em class="ft-bs">￥1500.00</em></div>
+		</li>
+		<li class="cf">
+			<div class="s1 fl"></div>
+			<div class="s2 fl"><span class="ft-b5 ml46">阶段2</span></div>
+			<div class="s3 fl"><em class="ft-b5">￥1500.00</em></div>
+		</li>
+	</ul>
+</div>
+<div class="text-center">
+	<p class="ft-b5"><br><br><br>如果您遇到与卖家无法协商解决的问题，<br> 请与我们的工作人员联系：0571-88888888<br><br><br></p>
+</div>
+<div class="status-btn text-center">
+	<button class="btn btn-tans order-btn ft-red">微信支付到平台</button>
+</div>
+<script type="text/javascript">
+	(function(Q){
+		var checkFn = function(_this,cls){
+			Q(cls).find('.iconfont').rmClass('icon-radio');
+			Q(cls).find('.iconfont').addClass('icon-nckradio');
+			Q(cls).find('input[type="radio"]').rmAttr("checked");
+			Q(_this).find('.iconfont').rmClass('icon-nckradio');
+			Q(_this).find('.iconfont').addClass('icon-radio');
+			Q(_this).find('input[type="radio"]').attr("checked",true);
+		}
+		Q('.js-pay-1').click(function(e){
+			checkFn('.js-pay-1','.js-pay-2');
+		})
+		Q('.js-pay-2').click(function(e){
+			checkFn('.js-pay-2','.js-pay-1');
+		})
+		Q('.js-slide').click(function(e){
+			if(!Q('.tran-slide').hasClass('up')){
+				Q('.tran-slide').addClass("up");
+				Q(this).find('.iconfont').addClass("icon-icon08").rmClass('icon-shouqi')
+			}else{
+				Q('.tran-slide').rmClass('up');
+				Q(this).find('.iconfont').addClass("icon-shouqi").rmClass('icon-icon08')
+			}
+		})
+	})(Qmik)
+</script>
+</body>
+</html>

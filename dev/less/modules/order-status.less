@@ -1,0 +1,38 @@
+@ppr:750px/16/1rem;
+.order-status {
+	padding: 30/@ppr;
+	ul {
+		margin-left: 138/@ppr;
+	}
+	li {
+		padding-left: 40/@ppr;
+		border-left:2px solid #f65f4c;
+		position: relative;
+		padding-bottom: 40/@ppr;
+		p {
+			color: #464f54;
+			font-size: 26/@ppr;
+		}
+		.time {
+			color: #a4aeb5;
+			font-size: 24/@ppr;
+			margin-top: 10/@ppr;
+		}
+		&.active {
+			p {
+				color: #f65f4c;
+				font-size: 30/@ppr;
+			}
+		}
+		&:after {
+			content: " ";
+			position: absolute;
+			width: 22/@ppr;
+			height: 22/@ppr;
+			background-color: #f65f4c;
+			border-radius: 50%;
+			left: -12/@ppr;
+			top: 0;
+		}
+	}
+}

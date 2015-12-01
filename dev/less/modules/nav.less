@@ -1,0 +1,27 @@
+@ppr:                   750px/16/1rem;
+.nav {
+	height: 90/@ppr;
+	background-color: #fff;
+	li {
+		width: 33.3%;
+		text-align: center;
+		div {
+			display: inline-block;
+			border-bottom: 4px solid transparent;
+			height: 86/@ppr;
+			line-height: 86/@ppr;
+			&.active {
+				border-bottom: 4px solid #f65f4c;
+				> span {
+					color: #f65f4c;
+				}
+			}
+			> span {
+				color: #88939a;
+				cursor: pointer;
+				font-weight: bold;
+				font-size: 30/@ppr;
+			}
+		}
+	}
+}

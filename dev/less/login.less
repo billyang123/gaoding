@@ -1,0 +1,52 @@
+@import "modules/base.less";
+@import "modules/utility.less";
+@import "modules/button.less";
+@import "modules/form.less";
+@import "modules/iconfont.less";
+@ppr: 750px/16/1rem;
+.gdm-login {
+	width: 580/@ppr;
+	padding: 42/@ppr 0;
+	.form-control {
+		width: 548/@ppr;
+		height: 70/@ppr;
+		&:focus,&:active,&:hover {
+			outline: 0;
+		}
+		transition:none;
+	}
+	.input-group {
+		width: 580/@ppr;
+		.form-control {
+			width: 450/@ppr;
+		}
+	}
+	.auth-code {
+		.form-control {
+			width: 308/@ppr;
+		}
+		.btn {
+			width: 220/@ppr;
+		}
+	}
+	.btn-danger,.btn-white {
+		width: 100%;
+	}
+}
+.form-group {
+  margin-bottom: 20/@ppr;
+}
+.help-else {
+	position: relative;
+	height: 45px;
+	margin-top: 45px;
+	> div {
+		position: absolute;
+		left: 50%;
+		width: 114/@ppr;
+		margin-left: -57/@ppr;
+		background-color: #f8f8f8;
+		text-align: center;
+		top: -12/@ppr;
+	}
+}

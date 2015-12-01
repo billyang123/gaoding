@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/dev/lib/mobile-util.js"></script>
+    <script src="/dev/lib/jquery/jquery-1-8-3.js"></script>
+    <link rel="stylesheet" type="text/css" href="/dev/styles/index.css">
+    <title>ajaxTest</title>
+</head>
+<body>
+<script src="/dev/scripts/mybase/gaoding.js"></script>
+<form id="ajaxForm" data-remote="true" data-type="json" action="test.json" method="post">
+	<input value="123124" type="text" name="name">
+	<input value="" type="password" name="pass">
+	<button type="button">提交</button>
+	<button type="submit">提交</button>
+</form>
+<button data-href="http://www.renhe.cn/">renhe</button>
+<div class="gd-modal gd-modal-active medium-up" style="display: block;">
+	<div class="gd-modal-dialog">
+		<div class="gd-modal-hd">Modal 标题</div>
+		<div class="gd-modal-bd">Modal 内容。本 Modal 无法通过遮罩层关闭。</div>
+		<div class="gd-modal-footer">
+			<span class="gd-modal-btn" data-am-modal-cancel="">取消</span>
+			<span class="gd-modal-btn" data-am-modal-confirm="">确定</span>
+		</div>
+	</div>
+</div>
+<div class="gd-dimmer gd-active" style="display: block;"></div>
+<script type="text/javascript">
+(function(jQ){
+	$("#ajaxForm").on("ajax:success",function(e,res){
+		console.log(e,res)
+	})
+	//gaoding.alert("asdasdasdas",3000);
+	//alert("18767101138")
+})(jQuery)
+</script>
+</body>
+</html>

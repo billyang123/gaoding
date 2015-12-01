@@ -1,3 +1,4 @@
+@import "mixins.less";
 @ppr:                   750px/16/1rem;
 @ns:                    ~"";
 @radius-normal:         2px;
@@ -75,6 +76,13 @@
   overflow: hidden;
 }
 
+.text-ellipsis {
+  word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 .@{ns}text-break {
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -110,11 +118,38 @@
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 .border-bottom {
 	border-bottom: 1px solid #e5e5e5;
 }
+.mt60 {
+    margin-top: 60/@ppr !important;
+}
+.mt40 {
+    margin-top: 40/@ppr !important;
+}
+.mt30 {
+    margin-top: 30/@ppr !important;
+}
 .mt20 {
-    margin-top: 20/@ppr;
+    margin-top: 20/@ppr !important;
+}
+.mt10 {
+    margin-top: 10/@ppr !important;
+}
+.mt10 {
+    margin-top: 10/@ppr !important;
+}
+.mb20 {
+    margin-bottom: 40/@ppr !important;
+}
+.mr40 {
+    margin-right: 40/@ppr !important;
+}
+.mr100 {
+    margin-right: 100/@ppr !important;
 }
 .gd-red {
   color: #f65f4b !important;
@@ -124,5 +159,74 @@
   font-size: 36/@ppr;
 }
 i.iconfont {
-    font-size: 32/@ppr;
+    font-size: 34/@ppr;
 }
+[data-href] {
+	cursor: pointer;
+}
+.ft {
+  &-bs {
+    color: #464f54 !important;
+  }
+  &-gray {
+    color: #88939a !important;
+  }
+  &-gy {
+    color: #b0afaf !important;
+  }
+  &-red {
+    color: #f56d5d !important;
+  }
+  &-b5 {
+    color: #b5b5b5 !important;
+  }
+  &-fff {
+    color: #fff;
+  }
+}
+.fs {
+  &24 {
+    font-size: 24/@ppr;
+  }
+  &26 {
+    font-size: 26/@ppr;
+  }
+  &28 {
+    font-size: 28/@ppr;
+  }
+  &30 {
+    font-size: 30/@ppr;
+  }
+  &32 {
+    font-size: 32/@ppr;
+  }
+  &34 {
+    font-size: 34/@ppr;
+  }
+}
+.color-white{
+  color:  #fff !important;
+}
+.bg-white {
+  background-color: #fff !important;
+}
+.bg-gray {
+  background-color: #f6f6f6 !important;
+}
+.bg-tans {
+  background-color: transparent !important;
+}
+.nav-fix-bt {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.gd-1-2 {
+  width: 50% !important;
+}
+.gd-1-3 {
+  width: 33.3% !important;
+}
+@import "popWrap.less";
+@import "animate.less";

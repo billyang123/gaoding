@@ -1,0 +1,266 @@
+@ppr:750px/16/1rem;
+@import "modules/base.less";
+@import "modules/utility.less";
+@import "modules/panel.less";
+@import "modules/button.less";
+@import "modules/iconfont.less";
+@import "modules/gd-price.less";
+@import "modules/order-status.less";
+.font-size(@size){
+    font-size: (@size);
+}
+.height(@height){
+    height:@height;
+    line-height: @height;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.background-size(@bgsize) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
+html{
+	background-color: #F6F6F6;
+	height: 100%;
+	overflow-x: hidden;
+}
+.font-red{
+	color: #f65f4c;
+}
+/*******************卖家订单-全额付款-_待接受*************************/
+.gdt-card {
+	margin: 20/@ppr 0;
+	position: relative;
+	.userimgbox {
+		position: absolute;
+		right: 0/@ppr;
+		top: -60/@ppr;
+	}
+	p {
+		color: #88939a;
+	}
+}
+//==============普通用户头像========================//
+.userimg {
+	width: 90/@ppr;
+	border: 1px solid #e3e3e6;
+}
+.panel{
+	box-shadow:none;
+	margin-bottom: 0;
+	margin-top: 40/@ppr;
+	width: 100%;
+}
+.pay-panel{
+	margin-top: 40/@ppr;
+}
+.panel-item{
+  padding: 0 30/@ppr;
+  height: 100/@ppr;
+}
+.panel-item-description{
+	padding: 0 30/@ppr;
+	float: left;
+	width:100%-60/@ppr;
+}
+.panel-item-title{  
+  .font-size(28/@ppr);
+  width:25%;
+  float: left;
+  .height(100/@ppr);
+  color: #888;
+}
+.panel-contain{
+  border: none;
+  .height(98/@ppr);
+  .font-size(28/@ppr);
+  color: #565e62;
+}
+.gd-dis{
+	color: #b5b5b5 !important;
+}
+.panel-contain-description{
+	width: 75%;
+	border: none;
+	color: #565e62;
+	.font-size(28/@ppr);
+	float: left;
+	margin: 37/@ppr 0/@ppr;
+	line-height: 50/@ppr;
+}
+.panel-footer{
+	border-top:none;
+    width: 100%;
+    padding: 18/@ppr 0/@ppr !important;
+}
+.pack-up-down{
+	margin-right: 25/@ppr;
+	cursor: pointer;
+}
+.btn40{
+	width:40%;
+	.font-size(36/@ppr);
+	.height(90/@ppr);
+	padding: 0;
+}
+.btn80{
+	width:80%;
+	.font-size(36/@ppr);
+	.height(90/@ppr);
+	padding: 0;
+}
+.btn100{
+	width:100%;
+	.font-size(36/@ppr);
+	.height(90/@ppr);
+	padding: 0;
+}
+.btn-whites{
+	background-color: #fff;
+}
+.border-dis{
+	border: 2px solid #464f54;
+	color:#464f54;
+}
+.border-red{
+	border: 2px solid #f65f4c;
+	color: #f65f4c;
+	&:hover{
+		color: #f65f4c;
+	}
+}
+.panel-or-show{
+	display: none;
+}
+/************已评论**********/
+//==============媒体类========================//
+.media {
+	background-color: #fff;
+	padding: 30/@ppr;
+	overflow: hidden;
+	.media-left {
+		display: table-cell;
+    	vertical-align: top;
+		padding-right: 20/@ppr;
+	}
+	.media-heading {
+		font-size: 26/@ppr;
+		color: #464f54;
+		font-weight: bold;
+	}
+	.media-body {
+		display: table-cell;
+    	vertical-align: top;
+		position: relative;
+		font-size: 24/@ppr;
+		width: 9999px;
+	}
+}
+.panel-bd-list{
+	overflow: hidden;
+	h3 {
+		font-size: 30/@ppr;
+	}
+	p {
+		font-size: 26/@ppr;
+		margin-top: 20/@ppr;
+	}
+	.item {
+		position: relative;
+		border-bottom: 1px solid #e5e5e5;
+		padding: 0 30/@ppr;
+		.height(92/@ppr);
+		&:last-child{
+			border-bottom: none;
+		}
+		.icon-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 37/@ppr;
+			color: #cfcfcf;
+		}
+	}
+	hr {
+		position: relative;
+		margin: 30/@ppr -30/@ppr 30/@ppr 0;
+		border: 1px solid #e5e5e5;
+	}
+}
+.panel-bd-appraises {
+	.media {
+		padding: 0;
+		.media-left{
+			margin-left: 10/@ppr;
+		}
+		.media-heading span {
+			font-weight: normal;
+			margin-left: 26/@ppr;
+		}
+		hr {
+			margin-left: 10/@ppr;
+		}
+	}
+	.time {
+		color: #697379;
+	}
+	.appra-stars {
+		.iconfont {
+			font-size: 30/@ppr;
+		}
+	}
+}
+.margin-bottom{
+	margin-bottom: 30/@ppr;
+}
+
+
+
+/**分阶段***/
+.font-dis{
+	color: #c6c6c6;
+}
+.money{
+	position: absolute;
+	line-height: 80/@ppr;
+	left: 35%;
+	.font-size(28/@ppr);
+	color: #f65f4c;
+}
+.sum{
+	width:100%;
+	.font-size(28/@ppr);
+	color: #b5b5b5;
+	padding-left: 37% !important;
+}
+.unit{
+	width: 33%;	
+	.font-size(28/@ppr);
+	color: #b5b5b5;
+}
+.division{
+	.font-size(30/@ppr);
+	color: #b5b5b5;
+	margin:0 15/@ppr;
+}
+.ga-modal-edit{
+	margin: 30/@ppr 0 20/@ppr 0;
+	width: 25%;
+	margin-left: 30%;
+}
+.gd-modal-remark{
+	text-align: center;
+	margin-top: 10/@ppr;
+	span{
+		font-size: 30/@ppr;
+	}
+}
+.two-btn{
+	.btn40{
+		margin-left: 20/3%;
+	}
+}

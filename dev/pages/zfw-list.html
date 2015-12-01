@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- begain头部引入 -->
+    <script>window.mobileUtil=function(a,b){var c=navigator.userAgent,d=/android|adr/gi.test(c),e=/iphone|ipod|ipad/gi.test(c)&&!d,f=d||e;return{isAndroid:d,isIos:e,isMobile:f,isNewsApp:/NewsApp\/[\d\.]+/gi.test(c),isWeixin:/MicroMessenger/gi.test(c),isQQ:/QQ\/\d/gi.test(c),isYixin:/YiXin/gi.test(c),isWeibo:/Weibo/gi.test(c),isTXWeibo:/T(?:X|encent)MicroBlog/gi.test(c),tapEvent:f?"tap":"click",fixScreen:function(){function c(a){return"initial-scale="+a+",maximum-scale="+a+",minimum-scale="+a}var d=b.querySelector('meta[name="viewport"]'),g=d?d.content:"",h=g.match(/initial\-scale=([\d\.]+)/),i=g.match(/width=([^,\s]+)/);if(d){if(f&&!h&&i&&"device-width"!=i[1]){var j=parseInt(i[1]),k=a.innerWidth||j,l=a.outerWidth||k,m=a.screen.width||k,n=a.screen.availWidth||k,o=a.innerHeight||j,p=a.outerHeight||o,q=a.screen.height||o,r=a.screen.availHeight||o,s=Math.min(k,l,m,n,o,p,q,r),t=s/j;1>t&&(d.content=g+","+c(t))}}else{var u,v=b.documentElement,w=v.dataset.mw||750,x=e?Math.min(a.devicePixelRatio,3):1,t=1/x;v.removeAttribute("data-mw"),v.dataset.dpr=x,d=b.createElement("meta"),d.name="viewport",d.content=c(t),v.firstElementChild.appendChild(d);var y=function(){var a=v.getBoundingClientRect().width;a/x>w&&(a=w*x);var b=a/16;v.style.fontSize=b+"px"};a.addEventListener("resize",function(){clearTimeout(u),u=setTimeout(y,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(u),u=setTimeout(y,300))},!1),y()}},getSearch:function(b){b=b||a.location.search;var c={},d=new RegExp("([^?=&]+)(=([^&]*))?","g");return b&&b.replace(d,function(a,b,d,e){c[b]=e}),c}}}(window,document),mobileUtil.fixScreen();</script>
+    <script src="/dev/lib/seajs/sea.js"></script>
+    <script>window.HEALTH = {assetsPath:"/dev"}</script>
+    <script src="/dev/lib/config/seajs-config.js"></script>
+	<!-- end头部引入 -->
+    <link rel="stylesheet" type="text/css" href="/dev/styles/index.css">
+    <title>seajsTest</title>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="/dev/styles/zfw-list.css">
+<link rel="stylesheet" href="/dev/styles/my.css">
+<div class="flexslider">
+	<ul class="slides">
+		<li style="background:url(/images/flexslider/img1.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(/images/flexslider/img2.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(/images/flexslider/img3.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(/images/flexslider/img4.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(/images/flexslider/img5.jpg) 50% 0 no-repeat;"></li>
+	</ul>
+</div>
+<div class="zfw-list-nav">
+	<ul class="cf">
+		<li>
+			<div>
+				<i class="icon icon-zp"></i>
+				<span>招聘</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-fl"></i>
+				<span>法律</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-gl"></i>
+				<span>管理</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-yx"></i>
+				<span>营销</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-jr"></i>
+				<span>金融</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-hlw"></i>
+				<span>互联网</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-px"></i>
+				<span>培训</span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<i class="icon icon-qt"></i>
+				<span>其它</span>
+			</div>
+		</li>
+	</ul>
+</div>
+<h3 class="main-title">精选服务</h3>
+<div class="panel-group">
+	<div class="panel">
+		<div class="panel-bd">
+			<h3 class="panel-title">量身定制一篇百万量级的公关文案</h3>
+			<div class="taglist cf">
+				<span class="tag">公关文案</span>
+				<span class="tag">事件报道</span>
+				<span class="tag">活动宣传</span>
+			</div>
+			<div class="gd-price">
+				<span class="rem">¥</span>
+				<span class="price">5000</span>
+				<span class="per">/ 次</span>
+			</div>
+			<div class="gdt-card">
+				<span class="userimgbox"><img class="userimg circle" src="http://renheuserfaceimages.b0.upaiyun.com/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"></span>
+				<p>杨波   阿里巴巴  /  新媒体运营经理</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel">
+		<div class="panel-bd">
+			<h3 class="panel-title">量身定制一篇百万量级的公关文案</h3>
+			<div class="taglist cf">
+				<span class="tag">公关文案</span>
+				<span class="tag">事件报道</span>
+				<span class="tag">活动宣传</span>
+			</div>
+			<div class="gd-price">
+				<span class="rem">¥</span>
+				<span class="price">5000</span>
+				<span class="per">/ 次</span>
+			</div>
+			<div class="gdt-card">
+				<span class="userimgbox"><img class="userimg circle" src="http://renheuserfaceimages.b0.upaiyun.com/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"></span>
+				<p>杨波   阿里巴巴  /  新媒体运营经理</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel">
+		<div class="panel-bd">
+			<h3 class="panel-title">量身定制一篇百万量级的公关文案</h3>
+			<div class="taglist cf">
+				<a href="#" class="tag">公关文案</a>
+				<a href="#" class="tag">事件报道</a>
+				<a href="#" class="tag">活动宣传</a>
+			</div>
+			<div class="gd-price">
+				<span class="rem">¥</span>
+				<span class="price">5000</span>
+				<span class="per">/ 次</span>
+			</div>
+			<div class="gdt-card">
+				<a href="#" class="userimgbox"><img class="userimg circle" src="http://renheuserfaceimages.b0.upaiyun.com/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"></a>
+				<p>杨波   阿里巴巴  /  新媒体运营经理</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bottom" style="background-color: #f5f5f5">
+    <div class="list" data-href="/index">
+        <i class="iconfont gd-dis icon-shouye font-red"></i>
+        <div class="list-text font-red">首页</div>
+    </div>
+    <div class="list" data-href="/order/list">
+        <i class="iconfont gd-dis icon-iconfontwodedingdan"></i>
+        <div class="list-text">订单</div>
+    </div>
+    <div class="list" data-href="/member/me">
+        <i class="iconfont gd-dis icon-wo01"></i>
+        <div class="list-text">我</div>
+    </div>
+</div>
+<script type="text/javascript">
+seajs.use(["$","flexSlider"],function($){
+	$('.flexslider').flexslider({
+		directionNav: false,
+		pauseOnAction: false,
+		animation:"swing"
+	});
+})
+</script>
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购买付款</title>
+	<script>window.mobileUtil=function(a,b){var c=navigator.userAgent,d=/android|adr/gi.test(c),e=/iphone|ipod|ipad/gi.test(c)&&!d,f=d||e;return{isAndroid:d,isIos:e,isMobile:f,isNewsApp:/NewsApp\/[\d\.]+/gi.test(c),isWeixin:/MicroMessenger/gi.test(c),isQQ:/QQ\/\d/gi.test(c),isYixin:/YiXin/gi.test(c),isWeibo:/Weibo/gi.test(c),isTXWeibo:/T(?:X|encent)MicroBlog/gi.test(c),tapEvent:f?"tap":"click",fixScreen:function(){function c(a){return"initial-scale="+a+",maximum-scale="+a+",minimum-scale="+a}var d=b.querySelector('meta[name="viewport"]'),g=d?d.content:"",h=g.match(/initial\-scale=([\d\.]+)/),i=g.match(/width=([^,\s]+)/);if(d){if(f&&!h&&i&&"device-width"!=i[1]){var j=parseInt(i[1]),k=a.innerWidth||j,l=a.outerWidth||k,m=a.screen.width||k,n=a.screen.availWidth||k,o=a.innerHeight||j,p=a.outerHeight||o,q=a.screen.height||o,r=a.screen.availHeight||o,s=Math.min(k,l,m,n,o,p,q,r),t=s/j;1>t&&(d.content=g+","+c(t))}}else{var u,v=b.documentElement,w=v.dataset.mw||750,x=e?Math.min(a.devicePixelRatio,3):1,t=1/x;v.removeAttribute("data-mw"),v.dataset.dpr=x,d=b.createElement("meta"),d.name="viewport",d.content=c(t),v.firstElementChild.appendChild(d);var y=function(){var a=v.getBoundingClientRect().width;a/x>w&&(a=w*x);var b=a/16;v.style.fontSize=b+"px"};a.addEventListener("resize",function(){clearTimeout(u),u=setTimeout(y,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(u),u=setTimeout(y,300))},!1),y()}},getSearch:function(b){b=b||a.location.search;var c={},d=new RegExp("([^?=&]+)(=([^&]*))?","g");return b&&b.replace(d,function(a,b,d,e){c[b]=e}),c}}}(window,document),mobileUtil.fixScreen();</script>
+    <script src="/dev/lib/seajs/sea.js"></script>
+    <script>window.HEALTH = {assetsPath:"/dev"}</script>
+    <script src="/dev/lib/config/seajs-config.js"></script>	
+	<link rel="stylesheet" href="/dev/styles/buy.css">
+</head>
+<body>
+	<header class="buy-header">
+		<img src="/images/gaoding-threeOn-750x66.png" class="firstOn">
+		<ul>
+			<li>填写资料</li>
+			<li>需求描述</li>
+			<li>支付费用</li>
+		</ul>
+	</header>
+	<div class="panel">
+		<div class="panel-hd">
+		<h3 class="panel-title">交易流程</h3>
+		</div>
+		<div class="panel-bd-list">
+			<div class="item">
+				<h3 class="cf"><span class="fl">1.意向达成</span><span class="fr">付款30%</span></h3>
+			</div>
+			<div class="item">
+				<h3 class="cf"><span class="fl">2.完成协议，提交效果报告</span><span class="fr">付款70%</span></h3>
+			</div>			
+		</div>
+	</div>
+	<div class="panel pay-panel">
+		<div class="panel-hd">
+			<h3 class="panel-title">支付阶段</h3>
+		</div>
+		<div class="panel-item-list">
+			<label class="checked">
+				<div class="item">
+					<span class="fl"><input name="group1" type="radio"></input><i class=" iconfont gd-red gd-check gd-radio icon-radio"></i>全额付清</span>
+					<span class="fr font-red">￥5000.00</span>
+				</div>
+			</label>
+			<label>
+				<div class="item">				
+					<span class="fl item-has-child"><input name="group1" type="radio" class="grading"></input><i class="iconfont gd-red gd-check gd-radio icon-5yuanquan"></i>分阶段</span>
+					<div class="item-child item1">
+						<span class="fl"><input name="group2" type="radio"></input><i class="iconfont gd-dis gd-check gd-radio icon-5yuanquan"></i>阶段1</span>
+						<span class="fr font-dis">￥5000.00</span>
+					</div>
+					<div class="item-child">
+						<span class="fl"><input name="group2" type="radio" disabled="disabled"></input><i class="iconfont gd-dis gd-check gd-radio icon-5yuanquan"></i>阶段2</span>
+						<span class="fr font-dis">￥5000.00</span>
+					</div>
+				
+				</div>
+			</label>	
+
+		</div>
+		<ul class="gdm-list pay-status fs28">
+			<li class="cf js-pay js-pay-1">
+				<div class="s1 fl text-right">
+					<i class="iconfont ft-red icon-nckradio"></i>
+					<input type="radio" name="all" style="display:none;">
+				</div>
+				<div class="s2 fl"><span class="ft-bs">全额支付</span></div>
+				<div class="s3 fl"><em class="ft-bs">￥4500.00</em></div>
+			</li>
+			<li class="cf js-pay js-pay-2">
+				<div class="s1 fl text-right">
+					<i class="iconfont ft-red icon-radio"></i>
+					<input type="radio" name="step" style="display:none;">
+				</div>
+				<div class="s2 fl"><span class="ft-bs">分阶段支付</span></div>
+				<div class="s3 fl"><em class="ft-bs">￥1500.00</em></div>
+			</li>
+			<li class="cf js-pay js-pay-2">
+				<div class="s1 fl"></div>
+				<div class="s2 fl cf">
+					<span class="fl">
+						<i class="iconfont ft-red icon-radio"></i>
+						<input type="radio" name="step1" style="display:none;">
+					</span>
+					<span class="ft-bs fl">阶段1</span>
+				</div>
+				<div class="s3 fl"><em class="ft-bs">￥1500.00</em></div>
+			</li>
+			<li class="cf">
+				<div class="s1 fl"></div>
+				<div class="s2 fl"><span class="ft-b5 ml46">阶段2</span></div>
+				<div class="s3 fl"><em class="ft-b5">￥1500.00</em></div>
+			</li>
+		</ul>
+	</div>
+	<div class="buy-bottom bottom-pay">支付保障</div>
+	<div class="bottom-remark">本次交易款项先支付到搞定平台，<br>在您确认服务完成后才会支付给卖家。<br>如有疑问，请联系客服：400-000-000 </div>
+	<button class="btn btn-danger btn100">微信支付到平台</button>
+</body>
+</html>
+<script>
+	seajs.use("$",function(){
+		$('.item').click(function() {
+        	$("label").removeClass("checked focusit");        	
+        	$(this).parents('label').addClass("checked focusit");
+        	$(".iconfont").removeClass("icon-radio").addClass("icon-5yuanquan");
+        	$(this).find(".iconfont").addClass("icon-radio").removeClass("icon-5yuanquan");
+            if($('.grading').parents("label").hasClass("checked")){
+           		$(".item1 i").addClass("gd-red icon-radio").removeClass("gd-dis icon-5yuanquan");
+           		$(".item1 .fr").removeClass("font-dis");
+           		$(".item1 input").removeAttr("disabled");
+           	} else {
+               	$(".item1 i").removeClass("gd-red icon-radio").addClass("gd-dis icon-5yuanquan");
+               	$(".item1 .fr").removeClass("font-red").addClass("font-dis");
+               	$(".item1 input").attr("disabled","disabled");
+            }
+        });
+	});
+</script>

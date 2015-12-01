@@ -18,12 +18,15 @@
 @ns:                          ~"";
 @panel-bg:                    #fff;
 @panel-border-radius:         0;
-@panel-border-color:          #ddd;
+@panel-border-color:          #e5e5e5;
 @panel-title-color:           #88939a;
 @panel-bdtitle-color:         #464f54;
 @panel-hd-padding:            30/@ppr;
 @panel-bd-padding:            30/@ppr;
-@table-border-color:          #ddd; // table and cell border
+@panel-footer-padding:        20/@ppr 20/@ppr;
+@panel-footer-bg:             #fff;
+@panel-inner-border:          #ddd;
+@table-border-color:          #e5e5e5; // table and cell border
 
 
 
@@ -91,7 +94,7 @@
 // Panel hds(h1 - h6)
 .@{ns}panel-title {
   margin: 0;
-  font-size: 100%;
+  font-size: 36/@ppr;
   color: @panel-title-color;
 
   > a {
@@ -102,13 +105,13 @@
 
 /* Panel footer */
 
-/*.@{ns}panel-footer {
+.@{ns}panel-footer {
   padding: @panel-footer-padding;
   background-color: @panel-footer-bg;
   border-top: 1px solid @panel-inner-border;
   .border-bottom-radius(@panel-border-radius);
   .hook-panel-footer;
-}*/
+}
 
 
 // Modifiers
@@ -265,6 +268,12 @@
 
 .@{ns}panel-group {
   margin-bottom: @line-height-computed;
+  border-top: 1px solid @panel-border-color;
+  background-color: #fff;
+  .panel-group-title {
+    padding:@panel-hd-padding;
+    border-bottom: 1px solid @panel-border-color;
+  }
   .@{ns}panel {
     border-top:0;
     &.first-child {
@@ -292,7 +301,7 @@
 .hook-panel-warning() {}
 .hook-panel-danger() {}
 
-@title:30/@ppr;
+@title:36/@ppr;
 @bd:26/@ppr;
 .panel-title {
   font-size: @title;
@@ -307,4 +316,60 @@
   border-top: 1px solid #e5e5e5;
   font-size: 30/@ppr;
   cursor: pointer;
+}
+.bottom{
+  border-top: 1px solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  .list{
+    width:100/3%;
+    float: left;
+    text-align: center;
+    margin: 14/@ppr 0;    
+    .list-text{
+      margin-top: 10/@ppr;
+      color: #929292;
+      font-size: 20/@ppr;
+      text-align: center;
+      color: #aeaeae;
+      width: 100%;
+    }
+    .iconfont{
+      font-size: 40/@ppr;
+    }
+    
+  } 
+  .font-red{
+    color: #f65f4c !important;
+  }
+}
+.panel-bottom {
+  background-color: #fff;
+  padding: 42/@ppr 0;
+  border-top: 4px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .order-btn {
+    font-size: 36/@ppr;
+  }
+  
+  // height: 127/@ppr;
+  // line-height: 127/@ppr;
+}
+.item .cf{
+  .fl{
+    width: 75%;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .fr{
+    width: 25%;
+    text-align: right;
+    color: #88939a;
+  }
 }

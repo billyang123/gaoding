@@ -1,0 +1,92 @@
+@import "mixins.less";
+@import "variables.less";
+@ppr:750px/16/1rem;
+
+@input-boder-color: #d5d5d5;
+@input-text-color: #88939a;
+@input-bg: #fff;
+@input-group-addon-color:#464f54;
+@input-group-addon-bg:@input-bg;
+@input-font-size:32/@ppr;
+@input-radius:8/@ppr;
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 9/@ppr 15/@ppr;
+  font-size: @input-font-size;
+  color: @input-text-color;
+  vertical-align: middle;
+  background-color:@input-bg;
+  background-image: none;
+  border: 1px solid @input-boder-color;
+  border-radius: @input-radius;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+select{
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border: 1px solid;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: #cfcfcf;
+    background-color: white;
+    cursor: default;
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  width: 100%;
+  .form-control {
+    display: table-cell;
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+    }
+  }
+}
+.input-group-addon {
+    width: auto;
+    padding: 9/@ppr 25/@ppr;
+    font-size: @input-font-size;
+    font-weight: 400;
+    line-height: 70/@ppr;
+    color: @input-group-addon-color;
+    text-align: center;
+    background-color: @input-group-addon-bg;
+    border: 1px solid @input-boder-color;
+    border-radius: @input-radius;
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: middle;
+    &:first-child {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+}
+.form-btn {
+  font-size: 32/@ppr;
+  padding: 25/@ppr 1em;
+  border-radius: @input-radius;
+  border: 1px solid @input-boder-color; 
+}
+/* help text */
+
+.form-help {
+  display: block;
+  color: #464f54;
+  font-size: 30/@ppr;
+}

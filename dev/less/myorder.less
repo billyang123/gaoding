@@ -1,0 +1,66 @@
+@ppr: 750px/16/1rem;
+@import "modules/mixins.less";
+@import "modules//base.less";
+@import "modules/utility.less";
+@import "modules/button.less";
+@import "modules/nav.less";
+@import "modules/gd-price.less";
+@import "modules/panel.less";
+
+//==============列表页的用户卡片========================//
+.gdt-card {
+	margin-top: 20/@ppr;
+	position: relative;
+	.userimgbox {
+		position: absolute;
+		right: 30/@ppr;
+		top: -60/@ppr;
+	}
+	p {
+		color: #88939a;
+	}
+}
+//==============普通用户头像========================//
+.userimg {
+	width: 90/@ppr;
+	border: 1px solid #e3e3e6;
+}
+.status {
+	line-height: 60/@ppr;
+	border-bottom: 1px solid #e5e5e5;
+}
+.status-text {
+	color: #f65f4c;
+	font-weight: bold;
+	font-size: 30/@ppr;
+}
+.order-btn {
+	width: 300/@ppr;
+	height: 60/@ppr;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 34/@ppr;
+	padding: 0;
+	border: 2px solid transparent;
+}
+.panel-group {
+	background-color: #f6f6f6;
+	.panel:not(:first-child) {
+		border-top: 1px solid #ddd;
+		margin-top: 40/@ppr;
+	}
+}
+.btn-tans {
+  .button-variant(#f65f4c; transparent; #f65f4c);
+  .hook-btn-tans;
+}
+hr {
+	border:1px solid #ddd;
+}
+.ft-bs {
+	color: #464f54 !important;
+}
+.ft-gray {
+	color: #88939a !important;
+}
+.hook-btn-tans {}

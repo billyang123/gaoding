@@ -1,0 +1,37 @@
+@ppr:750px/16/1rem;
+@import "mixins.less";
+.detial-list {
+	.item {
+		.clearfix();
+		padding: 32/@ppr;
+		font-size: 28/@ppr;
+		position: relative;
+		border-bottom: 1px solid #ddd;
+		&:first-child {
+			border-top: 1px solid #ddd;
+		}
+		.tt {
+			color: #888;
+			width: 160/@ppr;
+			display: inline-block;
+			float: left;
+		}
+		.tb {
+			color: #464f54;
+			width: 525/@ppr;
+			float: left;
+		}
+		select {
+			overflow: hidden;
+			background-color: transparent;
+		}
+		input,select,textarea {
+			display: inline-block;
+			border: 0;
+			&:focus {
+				border: 0;
+				outline: 0;
+			}
+		}
+	}
+}

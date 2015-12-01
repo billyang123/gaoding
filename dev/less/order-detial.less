@@ -1,0 +1,142 @@
+@ppr: 750px/16/1rem;
+@import "modules/mixins.less";
+@import "modules/base.less";
+@import "modules/iconfont.less";
+@import "modules/utility.less";
+@import "modules/panel.less";
+@import "modules/gd-price.less";
+@import "modules/order-status.less";
+@import "modules/button.less";
+@import "modules/detial-list.less";
+@import "modules/transition.less";
+@import "modules/gdm-status-list.less";
+//==============列表页的用户卡片========================//
+body{
+	padding-bottom: 200/@ppr;
+}
+
+.gdt-card {
+	margin: 20/@ppr 0;
+	position: relative;
+	.userimgbox {
+		position: absolute;
+		right: 30/@ppr;
+		top: -62/@ppr;
+	}
+	p {
+		color: #88939a;
+	}
+}
+//==============普通用户头像========================//
+.userimg {
+	width: 90/@ppr;
+	border: 1px solid #e3e3e6;
+}
+
+.gdt-contacts {
+	border-top: 1px solid #ddd;
+	position: relative;
+	padding-top: 30/@ppr;
+	span:first-child {
+		margin-right: 60/@ppr;
+	}
+	.iconfont {
+		color: #cfcfcf;
+	}
+}
+.status-text {
+	background-color: #fff;
+	padding: 40/@ppr;
+	border-top: 1px solid #ddd;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+.btn-tans {
+  .button-variant(#f65f4c; transparent; #f65f4c);
+  .hook-btn-tans;
+}
+.order-btn {
+	width: 585/@ppr;
+	height: 94/@ppr;
+	border-radius: 8px;
+	font-weight: bold;
+}
+.status-btn {
+	padding: 38/@ppr 0;
+	background-color: #fff;
+	> button {
+		font-size: 38/@ppr;
+	}
+}
+//==============媒体类========================//
+.media {
+	background-color: #fff;
+	padding: 30/@ppr;
+	overflow: hidden;
+	.media-left {
+		display: table-cell;
+    	vertical-align: top;
+		padding-right: 20/@ppr;
+	}
+	.media-heading {
+		font-size: 30/@ppr;
+		color: #464f54;
+		font-weight: bold;
+	}
+	.media-body {
+		display: table-cell;
+    	vertical-align: top;
+		position: relative;
+		font-size: 24/@ppr;
+		width: 9999px;
+	}
+}
+.panel-bd-list{
+	overflow: hidden;
+	h3 {
+		font-size: 30/@ppr;
+	}
+	p {
+		font-size: 26/@ppr;
+		margin-top: 20/@ppr;
+	}
+	.item {
+		position: relative;
+		.icon-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 37/@ppr;
+			color: #cfcfcf;
+		}
+	}
+	hr {
+		position: relative;
+		margin: 30/@ppr -30/@ppr 30/@ppr 0;
+		border: 1px solid #e5e5e5;
+	}
+}
+.panel-bd-appraises {
+	.media {
+		padding: 0;
+		.media-left{
+			margin-left: 10/@ppr;
+		}
+		.media-heading span {
+			font-weight: normal;
+			margin-left: 26/@ppr;
+		}
+		hr {
+			margin-left: 10/@ppr;
+		}
+	}
+	.time {
+		color: #697379;
+	}
+	.appra-stars {
+		.iconfont {
+			font-size: 30/@ppr;
+		}
+	}
+}

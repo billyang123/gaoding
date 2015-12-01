@@ -1,0 +1,262 @@
+@ppr:750px/16/1rem;
+@import "modules/base.less";
+@import "modules/utility.less";
+@import "modules/panel.less";
+@import "modules/button.less";
+@import "modules/iconfont.less";
+@import "modules/form.less";
+body{
+	padding-bottom: 200/@ppr;
+}
+.font-size(@size){
+    font-size: (@size);
+}
+.height(@height){
+    height:@height;
+    line-height: @height;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.background-size(@bgsize) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
+html{
+	background-color: #F6F6F6;
+	height: 100%;
+}
+/*个人信息**/
+.panel-personInfo{
+	margin-top: 42/@ppr;
+	border-bottom: none;
+	box-shadow: none;
+	float: left;
+	width: 100%;
+}
+.panel-item{
+  padding: 0 30/@ppr;
+  height: 100/@ppr;
+}
+.panel-item-title{  
+  .font-size(30/@ppr);
+  width:30%;
+  .height(100/@ppr);
+  color: #464f54;
+}
+.panel-contain{
+  .height(98/@ppr);
+  .font-size(28/@ppr);
+  color: #88939a;
+  margin-right: 30/@ppr;
+  border: none;
+  text-align: right;
+  background: none;
+}
+.gd-dis{
+	color: #cfcfcf !important;
+	font-size: 29/@ppr;
+	cursor: pointer;
+}
+.fr select{
+	float: left;
+	width:200/@ppr;
+	margin-top:28/@ppr;
+	margin-left:10/@ppr;
+	font-size: 28/@ppr; 
+}
+
+/**余额**/
+.person-balance-icon{
+	width: 100%;
+	text-align: center;
+}
+.person-balance-icon img{
+	width: 178/@ppr;
+	height: 146/@ppr;
+	margin: 160/@ppr 0/@ppr 78/@ppr 0/@ppr;
+	
+}
+.my-balance, .balance-num{
+	text-align: center;
+	color: #464f54;
+}
+.my-balance{
+	.font-size(32/@ppr);	
+}
+.balance-num{
+	.font-size(56/@ppr);
+	margin: 39/@ppr 0/@ppr 89/@ppr 0/@ppr;
+}
+.btn80{
+	width:80%;
+	.font-size(32/@ppr);
+	.height(100/@ppr);
+	padding: 0;
+	margin-left: 10%;
+	margin-bottom: 20/@ppr;
+	&:hover,&:focus{
+		background: #fffdfd !important;
+	}
+}
+
+
+/**余额明细**/
+.panel-touchBalance {
+	border-bottom: none;
+	box-shadow: none;
+	.panel-item{
+		height: 136/@ppr;
+	}
+	.panel-touchBalance-left{
+		width: 70%;
+	}
+}
+.touchBalance-title{
+	color: #464f54;
+	.font-size(30/@ppr);
+	margin-top: 30/@ppr;
+}
+.touchBalance-time{
+	color: #88939a;
+	.font-size(28/@ppr);
+	margin-top: 10/@ppr;
+}
+.panel-touchBalance-right{
+	color: #464f54;
+	.font-size(38/@ppr);
+	.height(136/@ppr);
+}
+
+
+/**余额提现*/
+.panel-touchBalance-left{
+	width: 30%;
+	float: left;
+}
+.panel-touchBalance-fr{
+	width: 70%;
+	float: left;
+	float: left;
+}
+.panel-item-bankInfo{
+	height: 144/@ppr;
+}
+.panel-money-num{
+	height: 95/@ppr;
+	padding: 0 30/@ppr;
+	div{
+		.height(95/@ppr);
+		margin: 0;
+	}
+}
+.panel-item-bankInfo{
+	padding: 0 30/@ppr;
+}
+.bank-info{
+	color: #576b95;
+}
+.btn90{
+	width:90%;
+	.font-size(36/@ppr);
+	.height(90/@ppr);
+	padding: 0;
+	margin-left: 5%;
+	margin-bottom: 20/@ppr;	
+}
+
+
+/**申请开店*/
+.apply-remark{
+	color: #464f54;
+	.font-size(28/@ppr);
+	padding: 32/@ppr 30/@ppr;
+	line-height: 50/@ppr;
+}
+
+.btn100{
+	width:100%;
+	.font-size(32/@ppr);
+	.height(100/@ppr);
+	padding: 0;
+}
+.btn-disabled{
+	background-color: #b5b5b5;
+	color: #fff;
+	margin-top: 54/@ppr;
+	&:hover{
+		color: #fff;
+	}
+}
+.description{
+	height: 900/@ppr;
+	border: none;
+	margin-top: 30/@ppr;
+	.font-size(28/@ppr);
+	width:100%;
+}
+
+
+/***提现详情**/
+.icon-iconfontshijian{
+	font-size: 80/@ppr;
+	text-align: center;
+	width: 100%;
+	color: #88939a;
+	margin: 80/@ppr auto 35/@ppr auto;
+}
+.remark-tip{
+	font-size: 28/@ppr;
+	color: #8e989f;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 116/@ppr;
+}
+.panel-left-contain{
+	color: #8e989f;
+	font-size: 30/@ppr;
+	.height(100/@ppr);
+}
+.panel-right-contain{
+	color: #464f54;
+	font-size: 28/@ppr;
+	.height(100/@ppr);
+}
+
+
+
+/**咨询**/
+.icon-liuyan{
+	font-size: 90/@ppr;
+	text-align: center;
+	width: 100%;
+	color: #88939a;
+	margin: 80/@ppr auto 30/@ppr auto;
+}
+.panel-left{
+	color: #88939a;
+	font-size: 28/@ppr;
+	.height(100/@ppr);
+	width: 30%;
+}
+.panel-center{
+	color: #88939a;
+	font-size: 36/@ppr;
+	.height(100/@ppr);
+}
+.panel-right{
+	.height(100/@ppr);
+}
+.panel.textarea{
+	padding: 0 30/@ppr;	
+}
+.leave-message{
+	height: 460/@ppr;
+	border: none;
+	margin-top: 30/@ppr;	
+	.font-size(28/@ppr);
+	width:100%;
+}

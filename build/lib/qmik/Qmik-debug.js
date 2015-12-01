@@ -2721,3 +2721,8 @@
 	};
 	//
 })(Qmik);
+Qmik('[data-href]').live({
+	click:function(e){
+		window.location.href=$(this).attr("data-href");
+	}
+})

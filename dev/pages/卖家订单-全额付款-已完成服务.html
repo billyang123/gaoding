@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单详情</title>
+	<script>window.mobileUtil=function(a,b){var c=navigator.userAgent,d=/android|adr/gi.test(c),e=/iphone|ipod|ipad/gi.test(c)&&!d,f=d||e;return{isAndroid:d,isIos:e,isMobile:f,isNewsApp:/NewsApp\/[\d\.]+/gi.test(c),isWeixin:/MicroMessenger/gi.test(c),isQQ:/QQ\/\d/gi.test(c),isYixin:/YiXin/gi.test(c),isWeibo:/Weibo/gi.test(c),isTXWeibo:/T(?:X|encent)MicroBlog/gi.test(c),tapEvent:f?"tap":"click",fixScreen:function(){function c(a){return"initial-scale="+a+",maximum-scale="+a+",minimum-scale="+a}var d=b.querySelector('meta[name="viewport"]'),g=d?d.content:"",h=g.match(/initial\-scale=([\d\.]+)/),i=g.match(/width=([^,\s]+)/);if(d){if(f&&!h&&i&&"device-width"!=i[1]){var j=parseInt(i[1]),k=a.innerWidth||j,l=a.outerWidth||k,m=a.screen.width||k,n=a.screen.availWidth||k,o=a.innerHeight||j,p=a.outerHeight||o,q=a.screen.height||o,r=a.screen.availHeight||o,s=Math.min(k,l,m,n,o,p,q,r),t=s/j;1>t&&(d.content=g+","+c(t))}}else{var u,v=b.documentElement,w=v.dataset.mw||750,x=e?Math.min(a.devicePixelRatio,3):1,t=1/x;v.removeAttribute("data-mw"),v.dataset.dpr=x,d=b.createElement("meta"),d.name="viewport",d.content=c(t),v.firstElementChild.appendChild(d);var y=function(){var a=v.getBoundingClientRect().width;a/x>w&&(a=w*x);var b=a/16;v.style.fontSize=b+"px"};a.addEventListener("resize",function(){clearTimeout(u),u=setTimeout(y,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(u),u=setTimeout(y,300))},!1),y()}},getSearch:function(b){b=b||a.location.search;var c={},d=new RegExp("([^?=&]+)(=([^&]*))?","g");return b&&b.replace(d,function(a,b,d,e){c[b]=e}),c}}}(window,document),mobileUtil.fixScreen();</script>
+    <script src="/dev/lib/seajs/sea.js"></script>
+    <script>window.HEALTH = {assetsPath:"/dev"}</script>
+    <script src="/dev/lib/config/seajs-config.js"></script>
+	<link rel="stylesheet" href="/dev/styles/seller-fullpay.css">
+</head>
+<body>
+	<div class="panel">
+		<div class="panel-hd">
+			<h3 class="panel-title">购买服务</h3>
+		</div>
+		<div class="panel-bd">
+			<h3 class="panel-title">量身定制一篇百万量级的公关文案</h3>
+			<div class="gd-price">
+				<span class="rem">¥</span>
+				<span class="price">5000</span>
+				<span class="per">/ 次</span>
+			</div>
+			<div class="gdt-card">
+				<span class="userimgbox"><img class="userimg circle" src="http://renheuserfaceimages.b0.upaiyun.com/images/headnone.jpg"></span>
+				<p>杨波   阿里巴巴  /  新媒体运营经理</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel fl">
+		<div class="panel-hd">
+			<h3 class="panel-title">买家信息</h3>
+		</div>
+		<div class="panel-hd panel-item">
+			<div class="panel-item-title">联系人</div>
+			<input class="panel-contain" type="text" value="用户名" placeholder="联系人" readonly="true"/>
+		</div>
+		<div class="panel-hd panel-item">
+			<div class="panel-item-title">联系电话</div>
+			<input class="panel-contain" type="text" value="15155565655" placeholder="联系电话" readonly="true"/>
+			<div class="fr panel-contain">
+				<i class="iconfont gd-dis">&#xe60c;</i>
+			</div>
+		</div>
+		<div class="panel-or-show">
+			<div class="panel-hd panel-item">
+			<div class="panel-item-title">地区</div>
+				<input class="panel-contain" type="text" value="杭州" placeholder="地区"readonly="true" />
+			</div>
+			<div class="panel-hd panel-item">
+				<div class="panel-item-title">从事行业</div>
+				<input class="panel-contain" type="text" value="互联网" placeholder="从事行业"/ readonly="true">
+			</div>
+			<div class="panel-hd panel-item">
+				<div class="panel-item-title">工作年限</div>
+				<input class="panel-contain" type="text" value="6" placeholder="工作年限" readonly="true"/>
+			</div>
+			<div class="panel-hd panel-item">
+				<div class="panel-item-title">当前公司</div>
+				<input class="panel-contain" type="text" value="人和网" placeholder="当前公司" readonly="true"/>
+			</div>
+			<div class="panel-hd panel-item">
+				<div class="panel-item-title">职业</div>
+				<input class="panel-contain" type="text" value="品牌公关" placeholder="职业" readonly="true"/>
+			</div>
+			<div class="panel-hd panel-item-description">
+				<div class="panel-item-title">需求描述</div>
+				<span class="panel-contain-description">从我们实际中对需求的描述来看，在描述需
+	求的时候难道就要去想这个需求会发生变更，
+	而且还考虑每个需求的变更影响。</span>
+			</div>
+		</div>		
+		<div class="panel-footer">
+			<p class="text-center ft-gray">
+				<i class="iconfont pack-up-down">&#xe601;</i>展开详情
+			</p>
+		</div>
+	</div>	
+	<div class="panel fl">
+		<div class="panel-hd">
+			<h3 class="panel-title">订单状态</h3>
+		</div>
+		<div class="panel-bd order-status">
+			<ul>
+				<li class="active">
+					<p>您完成了服务</p>
+					<div class="time">2015-10-25 16:30:28</div>	
+				</li>
+				<li>
+					<p>您接受了预约</p>
+					<div class="time">2015-10-25 16:30:28</div>	
+				</li>
+				<li>
+					<p>买家全额付款到平台</p>
+					<div class="time">2015-10-25 16:30:28</div>	
+				</li>
+				<li>
+					<p>买家购买了服务</p>
+					<div class="time">2015-10-25 16:30:28</div>	
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel fl text-center">
+		<button class="btn btn-whites btn40 border-dis radius-lg">修改服务价格</button>
+	</div>
+	<script type="text/javascript">
+	seajs.use("$",function(){
+		$(".panel-footer").click(function(){
+			var panelthis = $(this);
+			if(panelthis.hasClass("unfold")){
+				$(".panel-or-show").slideUp("3000");
+				$(".panel-footer").removeClass("unfold");
+				panelthis.find(".text-center").html('<i class="iconfont pack-up-down">&#xe601;</i>展开详情');		
+			} else {				
+				$(".panel-or-show").slideDown("3000");
+				$(".panel-footer").addClass("unfold");
+				panelthis.find(".text-center").html('<i class="iconfont pack-up-down">&#xe600;</i>收起');	
+			}
+		});
+	});		
+	</script>
+</body>
+</html>

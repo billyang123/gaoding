@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="input-group" id="sameSelect">
+  <div class="input-group-addon addon-left"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></div>
+  <input type="text" class="form-control" readonly="true">
+  <div class="input-group-addon addon-right"><span class="glyphicon glyphicon-align-right" aria-hidden="true"></span></div>
+</div>
+<script type="text/javascript">
+(function(jQ){
+	function sameSelect(element,options){
+		this.element = jQ(element);
+		this.settings = jQ.extend({},{
+			addonLeft:'.addon-left',
+			addonRight:'.addon-right',
+			control:'.form-control',
+			start:0,
+			end:10000,
+			gap:50,
+			limited:true
+		},options);
+		this._start = this.settings.start;
+		this._end = this.settings.end;
+		this._gap = this.settings.gap;
+		this._index = this._start;
+		this._control = jQ(this.settings.control);
+		this._limit = this.settings.limited;
+		this._init();
+	}
+	sameSelect.prototype = {
+		_init:function(){
+			var self = this;
+			this._control.val(this._index);
+
+			this.element.delegate(this.settings.addonLeft,"click",jQ.proxy(this, "addonLeft" ))
+						.delegate(this.settings.addonRight,"click",jQ.proxy(this, "addonRight" ))
+						.delegate(this.settings.control,"keydown",jQ.proxy(this, "_keyup" ));
+
+		},
+		addonLeft:function(){
+			if(this._limit && this._index<this._start+this._gap){
+				return;
+			}
+			this._index = this._index-this._gap;
+			this._control.val(this._index)
+		},
+		addonRight:function(){
+			if(this._limit && this._end && this._index>this._end-this._gap){
+				return;
+			}
+			this._index = this._index+this._gap;
+			this._control.val(this._index)
+		},
+		_keyup:function(event){
+			var e = event || window.event || arguments.callee.caller.arguments[0];
+			if(e && e.keyCode==38 || e && e.keyCode==37){//上,左
+				this.addonLeft()
+			}
+			if(e && e.keyCode==40 || e && e.keyCode==39){//下,右
+				this.addonRight()
+			}
+		}
+	};
+	new sameSelect("#sameSelect")
+})(jQuery)
+</script>
+</body>
+</html>

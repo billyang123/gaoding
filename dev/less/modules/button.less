@@ -126,6 +126,7 @@
   &:focus {
     color: @btn-default-color;
     text-decoration: none;
+    outline: 0;
     .hook-btn-hover;
   }
 
@@ -133,6 +134,7 @@
   &.@{ns}active {
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .15);
+    outline: 0;
     .hook-btn-active;
   }
 
@@ -190,8 +192,10 @@
   .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
   .hook-btn-secondary;
 }
-
-
+.@{ns}btn-white {
+  .button-variant(#464f54; #fffdfd; #d5d5d5);
+  .hook-btn-white;
+}
 /* Style links like a button */
 .@{ns}btn-link {
   color: @link-color;
@@ -301,6 +305,8 @@ input[type="button"] {
 .hook-btn-danger() {}
 .hook-btn-success() {}
 .hook-btn-secondary() {}
+.hook-btn-white() {}
+.hook-btn-tans() {}
 
 .hook-btn-xs() {}
 .hook-btn-sm() {}
@@ -313,4 +319,7 @@ input[type="button"] {
 }
 .btw180 {
 	width: 180/@ppr;
+}
+.radius-lg{
+   border-radius: @radius-lg;
 }

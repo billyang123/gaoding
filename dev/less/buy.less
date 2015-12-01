@@ -1,7 +1,13 @@
 @ppr:750px/16/1rem;
 @import "modules/base.less";
+@import "modules/utility.less";
 @import "modules/panel.less";
 @import "modules/button.less";
+@import "modules/iconfont.less";
+@import "modules/gdm-status-list.less";
+body {
+	padding-bottom: 200/@ppr;
+}
 .font-size(@size){
     font-size: (@size);
 }
@@ -19,38 +25,217 @@
   -moz-background-size: @bgsize;
   background-size: @bgsize;
 }
+html{
+	background-color: #F6F6F6;
+	height: 100%;
+}
 .buy-header{
-	padding: 47px 0px;
+	padding: 47/@ppr 0/@ppr;
 	width:100%;
+	text-align: center;
 }
 .firstOn{
 	width:100%;
-	background: url("/images/firstOn.png") no-repeat;
-	.background-size(cover);
-	height:66/@ppr;
-	li{
-		width:100/3%;
-		.height(66/@ppr);
-		text-align: center;
-		color: #fff;
-		float: left;
-		.font-size(28/@ppr);
+	height:66/@ppr;	
+}
+/**预约成功*/
+.buy-header {
+	ul{
+		position: absolute;
+		top: 47/@ppr;
+		left: 0;
+		width: 100%;
+		li{
+			width:100/3%;
+			.height(66/@ppr);
+			text-align: center;
+			color: #fff;
+			float: left;
+			.font-size(28/@ppr);
+		}
 	}
 }
 .panel{
 	width:100%;
 	float: left;
+	box-shadow:none;
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.pay-panel{
+	margin-top: 40/@ppr;
 }
 .panel-item{
   padding: 0 30/@ppr;
+  height: 100/@ppr;
 }
-.panel-item-title{
+.panel-item-title{  
   .font-size(28/@ppr);
-  width:30%;
+  width:25%;
   float: left;
   .height(100/@ppr);
+  color: #888;
 }
 .panel-contain{
   border: none;
-  .height(100/@ppr);
+  height:98/@ppr;
+  .font-size(28/@ppr);
+  color: #565e62;
+}
+.buy-bottom{
+	text-align: center;
+	color: #888;
+	.font-size(28/@ppr);
+	margin: 40/@ppr 0  130/@ppr 0;
+	width: 100%;
+	float: left;
+}
+.btn100{
+	width:100%;
+	.font-size(32/@ppr);
+	.height(100/@ppr);
+	padding: 0;
+}
+.panel-item-remark{
+	color: #888;
+	.font-size(28/@ppr);
+}
+
+
+/**需求描述*/
+.description{
+	height: 600/@ppr;
+	border: none;
+	margin-top: 30/@ppr;
+	width: 100%;	
+}
+.btn-disabled{
+	background-color: #b5b5b5;
+	color: #fff;
+	margin-top: 54/@ppr;
+	&:hover{
+		color: #fff;
+	}
+}
+
+.panel-bd-list{
+	overflow: hidden;
+	padding-left: 30/@ppr;
+	border-bottom: 1px solid #e5e5e5;
+}
+.panel-item-list{
+	overflow: hidden;
+	border-bottom: 1px solid #e5e5e5;
+	.item{
+		padding-left: 30/@ppr;
+	}
+}
+span{
+	font-size: 30/@ppr;
+	color: #464f54;
+}
+
+/*购买付款*/
+.item {
+	position: relative;
+	border-bottom: 1px solid #e5e5e5;
+	.height(92/@ppr);
+	&:last-child{
+		border-bottom: none;
+	}
+}
+.item-has-child{
+	width: 100%;
+}
+.fr{
+	margin-right: 30/@ppr;
+}	
+.gd-check{	
+	margin:35/@ppr 77/@ppr 0 58/@ppr;
+}
+.font-red{
+	color: #f65f4c;
+}
+.item-child{	
+	clear: both;
+	margin-left: 160/@ppr;
+	border-top: 1px solid #e5e5e5;
+	&:last-child{
+		border-top: none;
+	}
+	.gd-check{	
+		margin:35/@ppr 58/@ppr 0 0/@ppr;
+	}
+	.font-dis{
+		color: #b5b5b5;
+	}
+	.gd-dis{
+		color: #b5b5b5 !important;
+	}
+}
+
+.bottom-pay{
+	margin: 55/@ppr 0  24/@ppr 0;
+}
+.bottom-remark{
+	text-align: center;
+	color: #888;
+	.font-size(24/@ppr);
+	margin: 0/@ppr 0  79/@ppr 0;
+	line-height: 32/@ppr;
+}
+/**购买成功*/
+.center-tip{
+	text-align: center;
+	color: #333;
+	.font-size(30/@ppr);
+	margin: 30/@ppr 0/@ppr 83/@ppr 0/@ppr;
+}
+.gd-success{
+	margin:0/@ppr auto;
+	padding-top: 152/@ppr;
+	font-size: 63/@ppr;
+	text-align: center;
+	width:100%;
+}
+.btn80{
+	width:80%;
+	.font-size(32/@ppr);
+	.height(100/@ppr);
+	padding: 0;
+	margin-left: 10%;
+	margin-bottom: 100/@ppr;
+} 
+[type=radio] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+}
+
+/**预约失败**/
+.icon-shibai{
+	font-size: 63/@ppr;
+	text-align: center;
+	width: 100%;
+	margin: 152/@ppr auto 30/@ppr auto;
+}
+/**支付中*/
+.icon-icondoingk{
+	font-size: 63/@ppr;
+	text-align: center;
+	width: 100%;
+	margin: 152/@ppr auto 30/@ppr auto;
+}
+.code{
+	margin-bottom: 83/@ppr;
+}
+.width100{
+	width: 100%;
+	.btn80{
+		margin-left: 0;
+	}
+}
+select.form-control{
+	margin-top: 35/@ppr;
 }

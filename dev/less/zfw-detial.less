@@ -1,0 +1,216 @@
+@ppr: 750px/16/1rem;
+@import "modules/mixins.less";
+@import "modules/base.less";
+@import "modules/utility.less";
+@import "modules/gd-price.less";
+@import "modules/iconfont.less";
+@import "modules/panel.less";
+@import "modules/button.less";
+body {
+	padding-bottom: 190/@ppr;
+}
+//==============普通用户头像========================//
+.userimg {
+	width: 90/@ppr;
+	border: 1px solid #e3e3e6;
+}
+
+//==============详情页头部========================//
+.detail-hd-panel {
+	background-image: url("/images/gd_detail_headbg_20151106_750x312.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 40/@ppr;
+	.panel-title {
+		color: #464f54;
+		font-size: 36/@ppr;
+	}
+}
+.detail-hd-type {
+	> span {
+		color: #464f54;
+		font-size: 28/@ppr;
+		margin-right: 30/@ppr;
+		> i {
+			color: #f65f4b;
+			font-size: 28/@ppr; 
+		}
+	}
+}
+.detail-hd-num {
+	color: #464f54;
+	font-size: 28/@ppr;
+	> i {
+		display: inline-block;
+		height: 30/@ppr;
+		margin: 0 30/@ppr -5/@ppr 30/@ppr;
+		border-right: 2px solid #a4abaf;
+	}
+	> em {
+		color: #f65f4b;
+	}
+}
+//==============媒体类========================//
+.media {
+	background-color: #fff;
+	padding: 30/@ppr;
+	overflow: hidden;
+	.media-left {
+		display: table-cell;
+    	vertical-align: top;
+		padding-right: 20/@ppr;
+	}
+	.media-heading {
+		font-size: 30/@ppr;
+		color: #464f54;
+		font-weight: bold;
+	}
+	.media-body {
+		display: table-cell;
+    	vertical-align: top;
+		position: relative;
+		font-size: 24/@ppr;
+		width: 9999px;
+	}
+}
+//==============详情页普通的用户卡片========================//
+.media-card {
+	background-color: #fff;
+	padding: 30/@ppr;
+	p {
+		color: #88939a;
+		font-size: 28/@ppr;
+	}
+	.media-body {
+		padding-top: 10/@ppr;
+	}
+	.icon-right {
+		position: absolute;
+		right: 0;
+		top: 25/@ppr;
+		font-size: 37/@ppr;
+		color: #cfcfcf;
+	}
+}
+
+
+.panel-bd-list{
+	overflow: hidden;
+	h3 {
+		font-size: 30/@ppr;
+	}
+	p {
+		font-size: 26/@ppr;
+		margin-top: 20/@ppr;
+	}
+	.item {
+		position: relative;
+		.icon-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 37/@ppr;
+			color: #cfcfcf;
+		}
+	}
+	hr {
+		position: relative;
+		margin: 30/@ppr -30/@ppr 30/@ppr 0;
+		border: 1px solid #e5e5e5;
+	}
+}
+.panel-bd-appraises {
+	.media {
+		padding: 0;
+		.media-left{
+			margin-left: 10/@ppr;
+		}
+		.media-heading span {
+			font-weight: normal;
+			margin-left: 26/@ppr;
+		}
+		hr {
+			margin-left: 10/@ppr;
+		}
+	}
+	.time {
+		color: #697379;
+	}
+	.appra-stars {
+		.iconfont {
+			font-size: 30/@ppr;
+		}
+	}
+}
+.panel-detail-intro {
+	overflow: hidden;
+	.btn-right {
+		position: relative;
+		button{
+			position: absolute;
+			top: -82/@ppr;
+			right: 0;
+			height: 60/@ppr;
+		}
+	}
+	hr {
+		margin-left: 30/@ppr;
+		border: 1px solid #e5e5e5;
+	}
+}
+.nav-fix-bt {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.detail-fix {
+	height: 127/@ppr;
+	border-top: 1px solid #f6f6f6;
+	.clearfix();
+	.item {
+		width: 20%;
+		height: 127/@ppr;
+		float: left;
+		&.buy {
+			width: 40%;
+		}
+	}
+	.item.buy .itemlink{
+		background-color: #f65f4c;
+		vertical-align: middle;
+		line-height: 127/@ppr;
+		font-size: 36/@ppr;
+		font-weight: 800;
+		color: #fff;
+	}
+	.itemlink {
+		width: 100%;
+		padding-top: 1px;
+		background-color: #fff;
+		text-align: center;
+		font-size: 26/@ppr;
+		color: #88939a;
+		height: 127/@ppr;
+		border-left: 1px solid #e5e5e5;
+		.txt {
+			display: inline-block;
+			padding-right: 12/@ppr;
+			margin-bottom: 20/@ppr;
+		}
+		.iconfont {
+			display: inline-block;
+			font-size: 50/@ppr;
+			margin-top: 24/@ppr;
+		}
+		.icon-xingyetubiao08{
+			font-size: 46/@ppr;
+		}
+	}
+}
+.font-red{
+	color: #f65f4c;
+}
+.fuwu-description{
+	line-height: 50/@ppr;
+}

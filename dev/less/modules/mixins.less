@@ -63,7 +63,23 @@
   -webkit-overflow-scrolling: touch;
 }
 
-
+.font-size(@size){
+    font-size: (@size);
+}
+.height(@height){
+    height:@height;
+    line-height: @height;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.background-size(@bgsize) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
 // =============================================================================
 // Typographic
 // =============================================================================
@@ -826,12 +842,12 @@
   &.@{ns}active,
   .@{ns}active &.@{ns}dropdown-toggle {
     color: @color;
-    border-color: darken(@border, 12%);
+    border-color: @border;
   }
 
   &:hover,
   &:focus {
-    background-color: darken(@background, 7%);
+    background-color: @background;
   }
 
   &:active,

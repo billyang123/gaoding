@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="http://gaodingstatic.renhe.cn/build/lib/mobile-util.js"></script>
+    <script type="text/javascript" src="http://gaodingstatic.renhe.cn/dev/lib/qmik/Qmik.min.js"></script>
+    <script src="http://gaodingstatic.renhe.cn/build/lib/jquery/jquery-1-7-2-min.js"></script>
+    <link rel="stylesheet" href="http://gaodingstatic.renhe.cn/dev/styles/buy.css">
+    <title>购买</title>
+</head>
+<body>
+    
+<script type="text/javascript" src="http://gaodingstatic.renhe.cn/dev/lib/mobile-util.js"></script>
+<script type="text/javascript" src="http://gaodingstatic.renhe.cn/dev/lib/qmik/Qmik.min.js"></script>
+
+<header class="buy-header">
+    <img src="http://gaodingstatic.renhe.cn/images/gaoding-threeOn-750x66.png" class="firstOn">
+    <ul>
+        <li>填写资料</li>
+        <li>需求描述</li>
+        <li>支付费用</li>
+    </ul>
+</header>
+<div class="panel">
+    <div class="panel-hd">
+        <h3 class="panel-title">交易流程</h3>
+    </div>
+    <div class="panel-bd-list">
+            <div class="item">
+            <h3 class="cf"><span class="fl">1.第一阶段</span><span class="fr">付款￥0.01</span></h3>
+        </div>
+            <div class="item">
+            <h3 class="cf"><span class="fl">2.第二阶段</span><span class="fr">付款￥0.02</span></h3>
+        </div>
+            <div class="item">
+            <h3 class="cf"><span class="fl">3.第三阶段</span><span class="fr">付款￥0.03</span></h3>
+        </div>
+        </div>
+</div>
+
+<div class="panel mt20" q-ctrl="loginCtr">
+    <div class="panel-hd">
+        <h3 class="panel-title">支付阶段</h3>
+    </div>
+    <ul class="gdm-list pay-status fs28">
+        <li class="cf js-pay js-pay-1">
+            <div class="s1 fl text-right">
+                <i class="iconfont ft-red icon-nckradio"></i>
+                <input type="radio" name="form.allpay" value="22222" style="display:none;">
+            </div>
+            <div class="s2 fl"><span class="ft-bs">全额支付</span></div>
+            <div class="s3 fl"><em class="ft-bs">￥0.06</em></div>
+        </li>
+        <li class="cf js-pay js-pay-2">
+            <div class="s1 fl text-right">
+                <i class="iconfont ft-red icon-radio"></i>
+                <input type="radio" name="form.allpay" value="11111111111" style="display:none;">
+            </div>
+            <div class="s2 fl"><span class="ft-bs">分阶段支付</span></div>
+            <div class="s3 fl"><em class="ft-bs">￥0.01</em></div>
+        </li>
+            <li class="cf js-pay js-pay-2">
+            <div class="s1 fl"></div>
+                        <div class="s2 fl cf">
+                <span class="fl">
+					<i class="iconfont ft-red icon-radio"></i>
+					<input type="radio" name="step1" style="display:none;">
+				</span>
+                <span class="ft-bs fl">阶段1</span>
+            </div>
+            <div class="s3 fl"><em class="ft-bs">￥0.01</em></div>
+                    </li>
+            <li class="cf js-pay js-pay-2">
+            <div class="s1 fl"></div>
+                            <div class="s2 fl"><span class="ft-b5 ml46">阶段2</span></div>
+                <div class="s3 fl"><em class="ft-b5">￥0.02</em></div>
+                    </li>
+            <li class="cf js-pay js-pay-2">
+            <div class="s1 fl"></div>
+                            <div class="s2 fl"><span class="ft-b5 ml46">阶段3</span></div>
+                <div class="s3 fl"><em class="ft-b5">￥0.03</em></div>
+                    </li>
+        </ul>
+
+    <div>
+        <div class="buy-bottom bottom-pay">支付保障</div>
+        <div class="bottom-remark">本次交易款项先支付到搞定平台，<br>在您确认服务完成后才会支付给卖家。<br>如有疑问，请联系客服：400-000-000 </div>
+        <button class="btn btn-danger btn100" q-onclick="checkCode" >微信支付到平台</button>
+    </div>
+</div>
+<div class="col-sm-10 activity-address" id="activityAddress">
+    <select class="form-control country" name="country" data-value="10001" style="display:none;"></select>
+    <select class="form-control province valid" name="prov" data-value="16" validate="{validate:{required:true},messages:{required:'请选择活动地区'}}" style="" aria-required="true" aria-invalid="false"></select>
+    <select class="form-control city" name="city" data-value="3541" id="J_city" validate="{validate:{required:true},messages:{required:'请选择活动城市'}}" style=""></select>
+</div>
+<script>
+(function($){
+    $.cxSelect = function(settings){
+        var obj;
+        var settings;
+        var cxSelect = {
+            dom: {},
+            api: {}
+        };
+        // 检测是否为 DOM 元素
+        var isElement = function(o){
+            if(o && (typeof HTMLElement === 'function' || typeof HTMLElement === 'object') && o instanceof HTMLElement) {
+                return true;
+            } else {
+                return (o && o.nodeType && o.nodeType === 1) ? true : false;
+            };
+        };
+
+        // 检测是否为 jQuery 对象
+        var isJquery = function(o){
+            return (o && o.length && (typeof jQuery === 'function' || typeof jQuery === 'object') && o instanceof jQuery) ? true : false;
+        };
+
+        // 检测是否为数组
+        var isArray = function(o){
+            if(!Array.isArray) {
+                return Object.prototype.toString.call(o) === "[object Array]";
+            } else {
+                return Array.isArray(o);
+            };
+        };
+
+        // 分配参数
+        for (var i = 0, l = arguments.length; i < l; i++) {
+            if (isJquery(arguments[i])) {
+                obj = arguments[i];
+            } else if (isElement(arguments[i])) {
+                obj = $(arguments[i]);
+            } else if (typeof arguments[i] === 'object') {
+                settings = arguments[i];
+            };
+        };
+
+        if (obj.length < 1) {return};
+
+        cxSelect.init = function(){
+            var _this = this;
+
+            _this.dom.box = obj;
+
+            _this.settings = $.extend({}, $.cxSelect.defaults, settings, {
+                url: _this.dom.box.data('url'),
+                nodata: _this.dom.box.data('nodata'),
+                required: _this.dom.box.data('required'),
+                firstTitle: _this.dom.box.data('firstTitle'),
+                firstValue: _this.dom.box.data('firstValue')
+            });
+
+            // 未设置选择器组
+            if (!_this.settings.selects.length) {return};
+
+            _this.selectArray = [];
+            _this.selectSum = _this.settings.selects.length;
+
+            for (var i = 0; i < _this.selectSum; i++) {
+                if (!_this.dom.box.find('select.' + _this.settings.selects[i])) {break};
+
+                _this.selectArray.push(_this.dom.box.find('select.' + _this.settings.selects[i]));
+            };
+
+            _this.selectSum = _this.selectArray.length;
+
+            // 设置的选择器组不存在
+            if (!_this.selectSum) {return};
+
+            // 设置 URL，通过 Ajax 获取数据
+            if (typeof _this.settings.url === 'string') {
+                $.ajax({
+                    dataType:'json',
+                    type: 'get',
+                    timeout:100000,//超时时间
+                    success,function(json){
+                        _this.dataJson = json;
+                        _this.buildContent();
+                    },
+                    error:function(){},
+                    xhrFields:{}
+                });
+
+            // 设置自定义数据
+            } else if (typeof _this.settings.url === 'object') {
+                _this.dataJson = _this.settings.url;
+                _this.buildContent();
+            };
+        };
+
+        cxSelect.getIndex = function(n){
+            return (this.settings.required) ? n : n - 1;
+        };
+
+        // 获取下拉框内容
+        cxSelect.getNewOptions = function(elemJquery, data){
+            if (!elemJquery) {return};
+            
+            var _title = this.settings.firstTitle;
+            var _value = this.settings.firstValue;
+            var _dataTitle = elemJquery.attr('data-firstTitle');
+            var _dataValue = elemJquery.attr('data-firstValue');
+            var _html = '';
+
+            if (typeof _dataTitle === 'string' || typeof _dataTitle === 'number' || typeof _dataTitle === 'boolean') {
+                _title = _dataTitle.toString();
+            };
+
+            if (typeof _dataValue === 'string' || typeof _dataValue === 'number' || typeof _dataValue === 'boolean') {
+                _value = _dataValue.toString();
+            };
+
+            if (!this.settings.required) {
+                _html='<option value="' + _value + '">' + _title + '</option>';
+            };
+
+            $.each(data, function(i, v){
+                if (typeof(v.v) === 'string' || typeof(v.v) === 'number' || typeof(v.v) === 'boolean') {
+                    _html += '<option value="'+v.v+'">' + v.n + '</option>';
+                } else {
+                    _html += '<option value="'+v.n+'">' + v.n + '</option>';
+                };
+            });
+
+            return _html;
+        };
+
+        // 构建选框内容
+        cxSelect.buildContent = function(){
+            var _this = this;
+            
+            _this.dom.box.find('select').on('change', function(){
+                _this.selectChange(this.className);
+            });
+
+            var _html = _this.getNewOptions(_this.selectArray[0], _this.dataJson);
+            _this.selectArray[0].html(_html).rmAttr('disabled').emit('change');
+
+            _this.setDefaultValue();
+        };
+
+        // 设置默认值
+        cxSelect.setDefaultValue = function(n){
+            n = n || 0;
+
+            var _this = this;
+            var _value;
+
+            if (n >= _this.selectSum || !_this.selectArray[n]) {return};
+
+            _value = _this.selectArray[n].attr('data-value');
+
+            if (typeof _value === 'string' || typeof _value === 'number' || typeof _value === 'boolean') {
+                _value = _value.toString();
+
+                setTimeout(function(){
+                    _this.selectArray[n].val(_value).emit('change');
+                    n++;
+                    _this.setDefaultValue(n);
+                }, 1);
+            };
+        };
+
+        // 改变选择时的处理
+        cxSelect.selectChange = function(name){
+            name = name.replace(/ /g,',');
+            name = ',' + name + ',';
+
+            var selectValues=[];
+            var selectIndex;
+            var selectNext;
+            var selectData;
+            var _html;
+
+            // 获取当前 select 位置、选择值，并清空后面的 select
+            for (var i = 0; i < this.selectSum; i++) {
+                selectValues.push(this.getIndex(this.selectArray[i].get(0).selectedIndex));
+
+                if (typeof selectIndex === 'number' && i > selectIndex) {
+                    this.selectArray[i].empty().attr('disabled', true);
+
+                    if (this.settings.nodata === 'none') {
+                        this.selectArray[i].css('display', 'none');
+                    } else if(this.settings.nodata === 'hidden') {
+                        this.selectArray[i].css('visibility', 'hidden');
+                    };
+                };
+
+                if (name.indexOf(',' + this.settings.selects[i] + ',') > -1) {
+                    selectIndex = i;
+                };
+            };
+
+            // 获取下级的列表数据
+            selectNext = selectIndex + 1;
+            selectData = this.dataJson;
+            this.settings.nextData && this.settings.nextData(selectData,selectValues,this.dom.box)
+            for (var i = 0; i < selectNext; i++){
+                
+                if (typeof selectData[selectValues[i]]  === 'undefined' || isArray(selectData[selectValues[i]].s) === false || !selectData[selectValues[i]].s.length) {
+                    return;
+                };
+                selectData = selectData[selectValues[i]].s;
+            };
+            // 遍历数据写入下拉选框
+            if (this.selectArray[selectNext]) {
+                _html = this.getNewOptions(this.selectArray[selectNext], selectData);
+                this.selectArray[selectNext].html(_html).rmAttr('disabled').css({'display':'', 'visibility':''}).emit('change');
+            };
+        };
+        
+        cxSelect.init();
+
+        return this;
+    };
+
+    // 默认值
+    $.cxSelect.defaults = {
+        selects: [],            // 下拉选框组
+        url: null,              // 列表数据文件路径，或设为对象
+        nodata: null,           // 无数据状态
+        required: false,        // 是否为必选
+        firstTitle: '请选择',  // 第一个选项选项的标题
+        firstValue: '0'         // 第一个选项的值
+    };
+
+    $.fn.cxSelect = function(settings, callback){
+        this.each(function(i){
+            $.cxSelect(this, settings, callback);
+        });
+        return this;
+    };
+    $('#activityAddress').cxSelect({ 
+      url: address,
+      selects: ['country','province', 'city'], 
+      nodata: 'none',
+      required:false,
+      firstTitle:"select",
+      firstValue:""
+    });
+})(Qmik)
+</script>
+</body>
+</html>

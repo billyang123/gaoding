@@ -16,7 +16,7 @@
 }
 .flex-control-nav{
 	position:absolute;
-	bottom:10/@ppr;
+	bottom:8/@ppr;
 	z-index:2;
 	width:100%;
 	text-align:center;
@@ -25,24 +25,30 @@
 	display:inline-block;
 	width:14/@ppr;
 	height:14/@ppr;
-	margin:0 5/@ppr;
+	margin:0 8/@ppr;
 	*display:inline;
 	zoom:1;
 }
 .flex-control-nav a{
 	display:inline-block;
-	width:14/@ppr;
-	height:14/@ppr;
-	line-height:40/@ppr;
+	width:10/@ppr;
+	height:10/@ppr;
 	overflow:hidden;
-	background:url(/images/flexslider/dot.png) right 0 no-repeat;
-	cursor:pointer;
-	text-indent: -9999px;
+	background: none;
+	cursor: pointer;
+	text-indent: -9999px; 
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	-o-border-radius: 14px;
+	border-radius: 14px;
+	border: 2px solid #fff;
 }
 .flex-control-nav .flex-active{
-	background-position:0 0;
+	background:#fff;
 }
-
+.flex-control-paging li a:hover {
+	background: #fff;
+}
 .flex-direction-nav{
 	position:absolute;
 	z-index:3;

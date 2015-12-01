@@ -1,0 +1,76 @@
+@ppr:750px/16/1rem;
+@import "modules/base.less";
+@import "modules/utility.less";
+@import "modules/panel.less";
+@import "modules/iconfont.less";
+.font-size(@size){
+    font-size: (@size);
+}
+.height(@height){
+    height:@height;
+    line-height: @height;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.background-size(@bgsize) {
+  -webkit-background-size: @bgsize;
+  -moz-background-size: @bgsize;
+  background-size: @bgsize;
+}
+html{
+	background-color: #F6F6F6;
+	height: 100%;
+}
+body{
+	padding-bottom: 130/@ppr;
+}
+.panel{
+	width:100%;
+	box-shadow:none;
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.pay-panel{
+	margin-top: 40/@ppr;
+}
+.panel-item{
+  padding: 0 5%;
+  height: 100/@ppr;
+  margin-top: 40/@ppr;
+  float: left;
+  width: 90%;
+  border-top: 1px solid #e5e5e5;
+  background: white;
+}
+.panel-item-group{
+	border-bottom: 1px solid #e5e5e5;
+	width: 100%;
+	float: left;
+	margin-top: 40/@ppr;
+	.panel-item{
+		margin-top: 0/@ppr;	
+	}
+} 
+.panel-item-title{  
+  .font-size(30/@ppr);
+  float: left;
+  .height(100/@ppr);
+  color: #464f54;
+}
+.title-icon{
+	width: 42/@ppr;
+	height: 42/@ppr;
+	margin-right: 30/@ppr;
+	margin-top: 30/@ppr;
+	float: left;
+}
+.panel-right-contain{
+	.height(100/@ppr);
+}
+
+.gd-dis{
+	color: #a0a9af;
+}
