@@ -102,18 +102,20 @@ define(function(require, exports, module){
 				});
 			},tm||1500)
 		},
+		loadings:{},
 		loading:function(type){
-			gaoding.loadings && gaoding.loadings.hide();
-			if(!gaoding.loadings){
-				gaoding.loadings = $(gaoding.modalHtml().replace(/\{\{msg\}\}/g,'<span class="animation-spin animation-reverse"><i class="iconfont">&#xe62d;</i></span>').replace(/\{\{content\}\}/g,''));
+			type = type?type:"default";
+			gaoding.loadings[type] && gaoding.loadings[type].hide();
+			if(!gaoding.loadings[type]){
+                gaoding.loadings[type] = $(gaoding.modalHtml().replace(/\{\{msg\}\}/g,'<span class="animation-spin animation-reverse"><i class="iconfont icon-loading ft-fff"></i></span>').replace(/\{\{content\}\}/g,''));
 			}
 			var wh = gaoding.getSrceenWH();
-			gaoding.loadings.appendTo("body").css({
+			gaoding.loadings[type].appendTo("body").css({
 				"position": "fixed",
-				"left":(wh.w-gaoding.loadings.width())/2+"px",
-				"top":(wh.h-gaoding.loadings.height())/2+"px"
+				"left":(wh.w-gaoding.loadings[type].width())/2+"px",
+				"top":(wh.h-gaoding.loadings[type].height())/2+"px"
 			}).hide();
-			return gaoding.loadings;
+			return gaoding.loadings[type];
 		},
 		confirm:function(contain,callback){
 			var sth = $(str.replace(/\{\{contain\}\}/g,contain));

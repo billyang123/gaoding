@@ -1,5 +1,6 @@
 @ppr: 750px/16/1rem;
 @import "modules/mixins.less";
+@import "modules/iconfont.less";
 @import "modules//base.less";
 @import "modules/utility.less";
 @import "modules/button.less";
@@ -7,22 +8,10 @@
 @import "modules/gd-price.less";
 @import "modules/panel.less";
 
-//==============列表页的用户卡片========================//
-.gdt-card {
-	margin-top: 20/@ppr;
-	position: relative;
-	.userimgbox {
-		position: absolute;
-		right: 30/@ppr;
-		top: -60/@ppr;
-	}
-	p {
-		color: #88939a;
-	}
-}
 //==============普通用户头像========================//
 .userimg {
 	width: 90/@ppr;
+	height: 90/@ppr;
 	border: 1px solid #e3e3e6;
 }
 .status {
@@ -39,7 +28,7 @@
 	height: 60/@ppr;
 	border-radius: 8px;
 	font-weight: bold;
-	font-size: 34/@ppr;
+	font-size: 30/@ppr;
 	padding: 0;
 	border: 2px solid transparent;
 }

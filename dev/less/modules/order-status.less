@@ -4,13 +4,17 @@
 	ul {
 		margin-left: 138/@ppr;
 	}
-	li {
+	.no-cricle{
+		height:40/@ppr;
 		padding-left: 40/@ppr;
-		border-left:2px solid #f65f4c;
-		position: relative;
-		padding-bottom: 40/@ppr;
+		border-left:2px solid #a4aeb5;
+	}
+	.has-cricle{
+		padding-left: 40/@ppr;
+		border-left: 2px solid #a4aeb5;		
+		position: relative;		
 		p {
-			color: #464f54;
+			color: #a4aeb5;
 			font-size: 26/@ppr;
 		}
 		.time {
@@ -19,9 +23,13 @@
 			margin-top: 10/@ppr;
 		}
 		&.active {
+			border-left:2px solid #f65f4c;
 			p {
 				color: #f65f4c;
 				font-size: 30/@ppr;
+			}
+			&:after {
+				background-color: #f65f4c;
 			}
 		}
 		&:after {
@@ -29,7 +37,7 @@
 			position: absolute;
 			width: 22/@ppr;
 			height: 22/@ppr;
-			background-color: #f65f4c;
+			background-color: #a4aeb5;
 			border-radius: 50%;
 			left: -12/@ppr;
 			top: 0;

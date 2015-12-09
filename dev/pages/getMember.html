@@ -1,0 +1,289 @@
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.bootcss.com/jqueryui/1.11.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="//cdn.bootcss.com/jquery.textcomplete/0.2.2/jquery.textcomplete.js"></script>
+</head>
+<body>
+	<style type="text/css">
+	body {
+		font-size: 14px;
+	}
+	.cmu-img {
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 50%;
+	}
+	.ui-autocomplete {
+	    max-height: 300px;
+	    min-width: 250px;
+	    overflow-y: auto;
+	    overflow-x: hidden;
+	    margin: 0;
+	    padding: 0;
+	    background-color: #fff;
+	    border: 1px solid #ccc;
+	    border: 1px solid rgba(0,0,0,.15);
+	    border-radius: 4px;
+	    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	}
+	.ui-autocomplete li {
+		padding: 5px 15px;
+		line-height: 30px;
+		margin: 0;
+		cursor: pointer;
+		display: table;
+	}
+	.ui-autocomplete li.ui-state-focus {
+		background-color: #337ab7;
+		color: #fff;
+	}
+	.ui-helper-hidden-accessible {
+		display: none;
+	}
+	body .dropdown-menu {
+		max-height: 300px;
+	    min-width: 250px;
+	    overflow-y: auto;
+	    overflow-x: hidden;
+	}
+	</style>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<textarea id="autocompleteInput" row="5" class="form-control"></textarea>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="dropup">
+	  <input class="form-control" row="5" id="textarea">
+	</div>
+	<div class="atchat-menu">
+		<ul class="list-unstyled">
+			<li class="media active">
+				<div class="media-left"><img class="media-object cmu-img" src="http://renheuserfaceimages.b0.upaiyun.com/userface/userdefinednew/1442/2964/89/userface_6783482.jpg!normal" alt="马雪峰30头像"></div>
+				<div class="media-body"><span>马雪峰</span></div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	var projects = [
+      {
+        value: "3068",
+        label: "yangbinbin",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "20689",
+        label: "jQueryUI",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "1",
+        label: "SeJS",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "34",
+        label: "SizzdddleJS",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "56",
+        label: "SizzdsfsdfleJS",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "345",
+        label: "sdfsdfsdf",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      },
+      {
+        value: "6573",
+        label: "fsdfsdfsdfsd",
+        icon: "http://u1.renhe.cn/userface/userdefinednew/1442/2964/89/userface_6783482.jpg"
+      }
+    ];
+	
+	$.fn.getCursorPosition = function() {
+        var el = $(this).get(0);
+        var pos = 0;
+        if ('selectionStart' in el) {
+            pos = el.selectionStart;
+        } else if ('selection' in document) {
+            el.focus();
+            var Sel = document.selection.createRange();
+            var SelLength = document.selection.createRange().text.length;
+            Sel.moveStart('character', -el.value.length);
+            pos = Sel.text.length - SelLength;
+        }
+        return pos;
+    }
+	function atOptfn(element,options){
+		this.$element = $(element);
+		this.setting = $.extend({data:projects},options);
+		this.t = new Date().getTime();
+		this.atFlag = false;
+		this.txtValue = "";
+		this.beforeVal = "";
+		this.afterVal = "";
+		this.atPos = -1;
+		this.init();
+	}
+	atOptfn.prototype = {
+		textareaWrap:function(){
+			var pos = this.$element.offset();
+			var strArr = ['<div node-type="wrap">','<span node-type="before"></span>','<span node-type="flag"></span>','<span node-type="after"></span>','</div>']
+			this.$Wrap = $(strArr.join("")).appendTo("body").css({
+				"left": pos.left,
+			    "top": pos.top,
+			    "margin": 0,
+			    "padding": this.$element.css("padding"),
+			    "border-style": this.$element.css("border-style"),
+			    "border-width": this.$element.css("border-width"),
+			    "font-size": "14px",
+			    "word-wrap": "break-word",
+			    "line-height": "20px",
+			    "overflow": "hidden",
+			    "outline": "none",
+			    "position": "absolute",
+			    "opacity": 0,
+			    "z-index": -1000,
+			    "width": this.$element.width(),
+			    "height": this.$element.height()
+			});
+			this.$wrapBefore = this.$Wrap.find('[node-type="before"]');
+			this.$wrapFlag = this.$Wrap.find('[node-type="flag"]');
+			this.$wrapAfter = this.$Wrap.find('[node-type="after"]');
+		},
+		initComplete:function(){
+			var self = this;
+			this.$Input = $('<input id="chatMemberInput'+this.t+'" type="text">').appendTo("body").css({
+				"z-index": -1000,
+				"display":"none"
+			})
+			var AC = this.$Input.autocomplete({
+		      minLength: 0,
+		      source: projects,
+		      autoFocus:true,
+		      select: function( event, ui ) {
+		      	self.$element.val(self.beforeVal+"@"+ui.item.label+" "+self.afterVal.substring(self.query.length));
+		      	self.$element.get(0).selectionStart = self.$element.get(0).selectionEnd = self.atPos+ui.item.label.length+1;
+		        /*$( "#project" ).val( ui.item.label );
+		        $( "#project-id" ).val( ui.item.value );
+		        $( "#project-description" ).html( ui.item.desc );
+		        $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+		 */
+		        return false;
+		      }
+		    })
+		    AC.autocomplete( "instance" )._renderItem = function( ul, item ) {
+		      return $( '<li class="media" data-id="'+item.value+'"></li>' )
+		        .append( ['<div class="media-left">','<img class="media-object cmu-img" src="'+item.icon+'">','</div>','<div class="media-body">','<span>'+item.label+'</span>','</div>'].join("") )
+		        .appendTo( ul );
+		    }
+		    AC.autocomplete( "instance" )._resizeMenu = function() {
+			  this.menu.element.outerWidth( 250 );
+			}
+		},
+		setAtMember:function(val,label){
+			//this.$element.val(this.$element.val()+)
+		},
+		toHtmltxt:function(str){
+			return str.replace(/[ ]/g,'<span style="white-space:pre-wrap;"> </span>').replace(/[\n\r]/g,'<br>')
+		},
+		eventBind:function(){
+			var self = this;
+			$(document).delegate(this.$element,"keyup",function(event){
+				var _this = $(event.target);
+				var _val = _this.val();
+				var cursorPos = self.$element.getCursorPosition();
+
+				var key = _val.substring(cursorPos-1,cursorPos);
+				if(key=="@") {
+					self.atFlag = true;
+					self.atPos = cursorPos;
+				}
+				if(self.atFlag){
+					if(key==" "){
+						self.atFlag = false;
+						self.$Input.autocomplete("close")
+					}
+					self.query = _val.substring(self.atPos,cursorPos);
+				}
+				if(self.atFlag && self.atPos<=cursorPos){
+					self.beforeVal = _val.substring(0,self.atPos-1);
+					self.afterVal = _val.substring(self.atPos);
+					self.$wrapFlag.text("@");
+					self.$wrapBefore.html(self.toHtmltxt(self.beforeVal));
+					self.$wrapAfter.text(self.toHtmltxt(self.afterVal));
+					self.txtValue = _val;
+					var abc = self.$Input.autocomplete( "option", "position", { my: "left bottom", at: "left top", of: self.$wrapFlag[0]});
+					self.$Input.autocomplete( "search", self.query.substring(1) );
+				}else{
+					self.$Input.autocomplete("close")
+				}
+
+				// var bfStr = _val.substring(0,cursorPos);
+				// var mArr = bfStr.match(/\@(\S+)*/g);
+				// if(!mArr) return self.$Input.autocomplete("close");
+
+				// var query = mArr[mArr.length-1];
+				// var index = bfStr.indexOf(query);
+				// if(cursorPos>index+query.length) return self.$Input.autocomplete("close");
+				// var key = _val.substring(cursorPos-1,cursorPos);
+
+
+				// self.beforeVal = self.toHtmltxt(_val.substring(0,index));
+				// self.afterVal = self.toHtmltxt(_this.val().substring(index+1));
+				// self.$wrapFlag.text("@");
+				// self.$wrapBefore.html(self.beforeVal);
+				// self.$wrapAfter.text(self.afterVal);
+				// var abc = self.$Input.autocomplete( "option", "position", { my: "left bottom", at: "left top", of: self.$wrapFlag[0] });
+				// self.$Input.autocomplete( "search", query.substring(1) );
+				
+				// self.txtValue = _val;
+				// self.query = query;
+				// self.index = index;
+				// self.AtMArr = mArr;
+				// console.log(self.txtValue)
+			})
+			$(document).delegate(this.$element,"blur",function(){
+				self.$Input.autocomplete("close");
+			})
+			this.$element.on("keydown",function(event){
+				self.$Input.trigger(event.type,event)
+			})
+		},
+
+		init:function(){
+			this.textareaWrap();
+			this.initComplete();
+			this.eventBind();
+		}
+	};
+	//new atOptfn("#textarea")
+	$('#autocompleteInput').textcomplete([
+	    { // html
+	        mentions:  [{name:"ybb",value:1},{name:"hee",value:2}],
+	        match: /\B@(\S*)$/,
+	        search: function (term, callback) {
+	            callback($.map(this.mentions, function (mention) {
+	            	console.log(mention,term)
+	                return mention.name.indexOf(term) === 0 ? mention : null;
+	            }));
+	        },
+	        template:function(value){
+	        	return '<div>'+value.name+'</div>'
+	        },
+	        maxCount:10,
+	        placement:"top",
+	        index: 1,
+	        replace: function (mention) {
+	            return '@' + mention.name + ' ';
+	        }
+	    }
+	], { appendTo: 'body' })
+	</script>
+</body>
+</html>

@@ -350,6 +350,57 @@ i.iconfont {
 .gd-1-3 {
   width: 33.3% !important;
 }
+.gdt-card {
+  margin-top: 0.42666667rem;
+  position: relative;
+}
+.gdt-card .userimgbox {
+  position: absolute;
+  right: 0.64rem;
+  top: -0.85333333rem;
+}
+.gdt-card p {
+  color: #88939a;
+  padding-right: 3.30666667rem;
+  line-height: 0.96rem;
+  font-size: 0.55466667rem;
+}
+.gdt-card p.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.font-red {
+  color: #f65f4c !important;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #b5b5b5;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #b5b5b5;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #b5b5b5;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #b5b5b5;
+}
+textarea.description.applySeller::-webkit-input-placeholder:before {
+  display: block;
+  font-size: 0.55466667rem;
+  content: "示例： \A\A姓名：张三 \A\A手机号：13812345678 \A\A邮箱：test@163.com  \A\A能力描述：本人从事XX行业N年，有较为丰富的XX经验，能解决XX问题。";
+}
+textarea.description.demand::-webkit-input-placeholder:before {
+  display: block;
+  font-size: 0.55466667rem;
+  content: "请介绍你自己，并描述遇到的问题和想得到的支持或服务，以便卖家更好了解您。\A\A示例：我是XX公司的XX职位，主要从事XX工作。现在我有XX方面的需求，需要XX方面的专家为我解决，谢谢！";
+}
+/* WebKit browsers */
 .float-popWrap {
   border-radius: 8px;
   z-index: 9999;
@@ -840,6 +891,7 @@ i.iconfont {
 }
 .panel-bottom .order-btn {
   font-size: 0.768rem;
+  border-width: 2px;
 }
 .item .cf .fl {
   width: 75%;
@@ -1579,6 +1631,31 @@ select {
   color: #464f54;
   font-size: 0.64rem;
 }
+.gd-price {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0.32rem 0rem 0rem 0rem;
+}
+.gd-price .rem {
+  font-family: arial;
+  font-size: 0.64rem;
+  margin-right: 0.064rem;
+  color: #f56d5d;
+}
+.gd-price .price {
+  color: #f56d5d;
+  font-size: 0.85333333rem;
+}
+.gd-price .per {
+  color: #f56d5d;
+  font-size: 0.512rem;
+}
+.fuwu-style .panel-title {
+  font-size: 0.59733333rem;
+}
+.fuwu-style .price {
+  font-size: 0.55466667rem;
+}
 body {
   padding-bottom: 4.26666667rem;
 }
@@ -1748,7 +1825,7 @@ html {
   color: #fff;
 }
 .description {
-  height: 19.2rem;
+  height: 14.93333333rem;
   border: none;
   margin-top: 0.64rem;
   font-size: 0.59733333rem;
@@ -1815,4 +1892,9 @@ html {
   margin-top: 0.64rem;
   font-size: 0.59733333rem;
   width: 100%;
+}
+.userimg {
+  width: 1.92rem;
+  height: 1.92rem;
+  border: 1px solid #e3e3e6;
 }

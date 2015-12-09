@@ -4,6 +4,7 @@
 @import "modules/panel.less";
 @import "modules/button.less";
 @import "modules/iconfont.less";
+@import "modules/gd-price.less";
 @import "modules/gdm-status-list.less";
 body {
 	padding-bottom: 200/@ppr;
@@ -57,7 +58,6 @@ html{
 }
 .panel{
 	width:100%;
-	float: left;
 	box-shadow:none;
 	margin-bottom: 0;
 	border-bottom: none;
@@ -104,10 +104,10 @@ html{
 
 /**需求描述*/
 .description{
-	height: 600/@ppr;
+	height: 260/@ppr;
 	border: none;
-	margin-top: 30/@ppr;
-	width: 100%;	
+	width: 100%;
+	font-size: 26/@ppr;	
 }
 .btn-disabled{
 	background-color: #b5b5b5;
@@ -121,7 +121,16 @@ html{
 .panel-bd-list{
 	overflow: hidden;
 	padding-left: 30/@ppr;
+	padding-right: 30/@ppr;
 	border-bottom: 1px solid #e5e5e5;
+	h3 {
+		font-size: 30/@ppr;
+	}
+	hr {
+		position: relative;
+		margin: 0 -30/@ppr 0 0;
+		border: 1px solid #e5e5e5;
+	}
 }
 .panel-item-list{
 	overflow: hidden;
@@ -138,7 +147,6 @@ span{
 /*购买付款*/
 .item {
 	position: relative;
-	border-bottom: 1px solid #e5e5e5;
 	.height(92/@ppr);
 	&:last-child{
 		border-bottom: none;
@@ -147,9 +155,6 @@ span{
 .item-has-child{
 	width: 100%;
 }
-.fr{
-	margin-right: 30/@ppr;
-}	
 .gd-check{	
 	margin:35/@ppr 77/@ppr 0 58/@ppr;
 }
@@ -181,7 +186,7 @@ span{
 	text-align: center;
 	color: #888;
 	.font-size(24/@ppr);
-	margin: 0/@ppr 0  79/@ppr 0;
+	margin: 0/@ppr 0  0/@ppr 0;
 	line-height: 32/@ppr;
 }
 /**购买成功*/
@@ -238,4 +243,12 @@ span{
 }
 select.form-control{
 	margin-top: 35/@ppr;
+}
+.userimg {
+	width: 90/@ppr;
+	height: 90/@ppr;
+	border: 1px solid #e3e3e6;
+}
+.js-pay .fl.ellipsis{
+	width:75%;
 }
