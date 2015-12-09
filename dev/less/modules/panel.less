@@ -19,8 +19,8 @@
 @panel-bg:                    #fff;
 @panel-border-radius:         0;
 @panel-border-color:          #e5e5e5;
-@panel-title-color:           #88939a;
-@panel-bdtitle-color:         #464f54;
+@panel-title-color:           #464f54;
+@panel-bdtitle-color:         #88939a;
 @panel-hd-padding:            30/@ppr;
 @panel-bd-padding:            30/@ppr;
 @panel-footer-padding:        20/@ppr 20/@ppr;
@@ -78,6 +78,9 @@
   padding: @panel-hd-padding;
   border-bottom: 1px solid #e5e5e5;
   .hook-panel-hd;
+  .@{ns}panel-title {
+     color: @panel-bdtitle-color;
+  }
 }
 
 
@@ -86,7 +89,7 @@
 .@{ns}panel-bd {
   padding: @panel-bd-padding;
   .@{ns}panel-title {
-     color: @panel-bdtitle-color;
+     color: @panel-title-color;
   }
   .hook-panel-bd;
 }
@@ -94,7 +97,7 @@
 // Panel hds(h1 - h6)
 .@{ns}panel-title {
   margin: 0;
-  font-size: 36/@ppr;
+  font-size: 38/@ppr;
   color: @panel-title-color;
 
   > a {
@@ -273,6 +276,9 @@
   .panel-group-title {
     padding:@panel-hd-padding;
     border-bottom: 1px solid @panel-border-color;
+    .@{ns}panel-title {
+       color: @panel-bdtitle-color;
+    }
   }
   .@{ns}panel {
     border-top:0;
@@ -305,7 +311,6 @@
 @bd:26/@ppr;
 .panel-title {
   font-size: @title;
-  font-weight: bold;
 }
 .panel-bd {
   font-size: @bd;

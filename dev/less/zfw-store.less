@@ -42,14 +42,26 @@
 	text-align: center;
 }
 ul.well-list {
-	padding: 30/@ppr;
+	padding: 30/@ppr 0 ;
 	background-color: #fff;
+	float: left;
+	width: 100%;
 	li {
+		padding: 0 30/@ppr;
 		font-size: 28/@ppr;
 		color: @fcolor1;
 		> span {
 			color: @fcolor2;
 		}
+		.fl{
+			width:21%;
+		}
+		.fr{
+			width:79%;
+			text-align: left;
+		}
+		
+		
 	}
 }
 .panel-bd-list{
@@ -79,11 +91,12 @@ ul.well-list {
 }
 .gdm-dianpu-nav {
 	.clearfix();
+	clear: both;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	background-color: #fff;
 	li {
-		width: 50%;
+		width: 100/3%;
 		float: left;
 		> div {
 			border-left: 1px solid #ddd;

@@ -372,7 +372,7 @@ i.iconfont {
   text-overflow: ellipsis;
 }
 .font-red {
-  color: #f65f4c !important;
+  color: #f56d5d !important;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -656,11 +656,11 @@ textarea.description.demand::-webkit-input-placeholder:before {
   float: left;
   margin: 0 0.42666667rem 0.21333333rem 0;
   padding: 0.17066667rem 0.46933333rem;
-  font-size: 0.512rem;
-  background-color: #eaeeef;
-  border-radius: 0.17066667rem;
-  color: #464f54;
-  font-weight: bold;
+  font-size: 0.59733333rem;
+  background-color: #fff;
+  border-radius: 0.64rem;
+  color: #88939a;
+  border: 2px solid #E1E1E1;
 }
 .gd-price {
   display: inline-block;
@@ -671,14 +671,14 @@ textarea.description.demand::-webkit-input-placeholder:before {
   font-family: arial;
   font-size: 0.64rem;
   margin-right: 0.064rem;
-  color: #f56d5d;
+  color: #f56d5d !important;
 }
 .gd-price .price {
-  color: #f56d5d;
+  color: #f56d5d !important;
   font-size: 0.85333333rem;
 }
 .gd-price .per {
-  color: #f56d5d;
+  color: #88939a;
   font-size: 0.512rem;
 }
 .fuwu-style .panel-title {
@@ -697,9 +697,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
 } */
 @font-face {
   font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1448607664_643456.eot');
+  src: url('//at.alicdn.com/t/font_1449652718_0367107.eot');
   /* IE9*/
-  src: url('//at.alicdn.com/t/font_1448607664_643456.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1448607664_643456.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1448607664_643456.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1448607664_643456.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1449652718_0367107.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1449652718_0367107.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1449652718_0367107.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1449652718_0367107.svg#iconfont') format('svg');
   /* iOS 4.1- */
 }
 .iconfont {
@@ -730,6 +730,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
 }
 .icon-dingwei:before {
   content: "\e61c";
+}
+.icon-close:before {
+  content: "\e62a";
 }
 .icon-shoucang:before {
   content: "\e604";
@@ -866,6 +869,15 @@ textarea.description.demand::-webkit-input-placeholder:before {
 .icon-xingyetubiaohuaban5js14:before {
   content: "\e61a";
 }
+.icon-xingyetubiao26:before {
+  content: "\e628";
+}
+.icon-xingyetubiao27:before {
+  content: "\e629";
+}
+.icon-xingyetubiao28:before {
+  content: "\e62b";
+}
 /*.@{ns}panel-variant(@border; @hd-text-color; @hd-bg-color; @hd-border) {
   border-color: @border;
 
@@ -901,6 +913,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
   padding: 0.6rem 1.25rem;
   border-bottom: 1px solid #e5e5e5;
 }
+.gd-panel-hd .gd-panel-title {
+  color: #88939a;
+}
 /* Panel content */
 .gd-panel-bd {
   padding: 1.25rem;
@@ -910,11 +925,11 @@ textarea.description.demand::-webkit-input-placeholder:before {
 }
 .gd-panel-title {
   margin: 0;
-  font-size: 0.768rem;
-  color: #88939a;
+  font-size: 0.81066667rem;
+  color: #464f54;
 }
 .gd-panel-title > a {
-  color: #88939a;
+  color: #464f54;
 }
 /* Panel footer */
 .gd-panel-footer {
@@ -1019,6 +1034,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
   padding: 0.6rem 1.25rem;
   border-bottom: 1px solid #e5e5e5;
 }
+.gd-panel-group .panel-group-title .gd-panel-title {
+  color: #88939a;
+}
 .gd-panel-group .gd-panel {
   border-top: 0;
   margin-bottom: 0;
@@ -1029,7 +1047,6 @@ textarea.description.demand::-webkit-input-placeholder:before {
 }
 .panel-title {
   font-size: 0.768rem;
-  font-weight: bold;
 }
 .panel-bd {
   font-size: 0.55466667rem;
@@ -2305,4 +2322,32 @@ ul.well-list li {
 }
 ul.well-list li > span {
   color: #88939a;
+}
+.gd-modal-hd-title {
+  height: 1.83466667rem;
+  line-height: 1.83466667rem;
+  padding: 0;
+}
+.modal-line {
+  padding-left: 10%;
+  width: 90%;
+}
+.modal-line .modal-line-title {
+  height: 2.816rem;
+  line-height: 2.816rem;
+  color: #88939a;
+}
+.modal-line .ga-modal-edit {
+  position: relative;
+  margin-left: 25%;
+  width: 45%;
+}
+.modal-line .ga-modal-edit .money {
+  left: 8%;
+}
+.modal-line .ga-modal-edit .sum {
+  padding-left: 20% !important;
+}
+.modal-lines-contains {
+  border-top: 1px solid #dedede;
 }

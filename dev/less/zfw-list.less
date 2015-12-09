@@ -14,7 +14,7 @@
 .userimg {
 	width: 90/@ppr;
 	height: 90/@ppr;
-	border: 1px solid #e3e3e6;
+	border: 2px solid #E8E8E8;
 }
 .main-title {
 	text-align: center;
@@ -26,27 +26,33 @@
 	text-align: center;
 	font-size: 28/@ppr;
 }
-.zfw-list-nav {
-	background-color: #fff;
+.zfw-list-nav {	
 	margin-bottom: 25/@ppr;
-	border-bottom:1px solid #e5e5e5;
-	ul {
-		padding-bottom: 15/@ppr;
-	}
 	li {
 		float: left;
 		width: 25%;
 		text-align: center;
+		background-color: #fff;
 		> div {
-			width: 80/@ppr;
-			display: inline-block;
+			padding: 40/@ppr 0 40/@ppr 0;			
 			text-align: center;
-			cursor: pointer;
-			> span {
-				font-size: 26/@ppr;
+			cursor: pointer;			
+			border-bottom: 1px solid #d2d2d2;
+			border-right: 1px solid #d2d2d2;
+			&.no-right-border{
+				border-right:none;
 			}
+			> i{
+				width: 100%; 
+				margin-bottom: 10/@ppr;
+			}
+			> span {
+				font-size: 26/@ppr;				
+			}
+		}		
+		&:hover{
+			background-color: #f7f9f9;
 		}
-		margin: 20/@ppr 0;
 	}
 	.iconfont{
 		display: inline-block;
@@ -137,7 +143,7 @@
 .border-bottom .panel{
 	border-bottom: 1px solid #e5e5e5;
 	.panel-bd {
-		padding-top: 45/@ppr;
+		padding-top: 40/@ppr;
 		padding-bottom: 45/@ppr;
 	}
 	&:last-child{

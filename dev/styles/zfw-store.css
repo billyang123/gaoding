@@ -372,7 +372,7 @@ i.iconfont {
   text-overflow: ellipsis;
 }
 .font-red {
-  color: #f65f4c !important;
+  color: #f56d5d !important;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -687,11 +687,11 @@ textarea.description.demand::-webkit-input-placeholder:before {
   float: left;
   margin: 0 0.42666667rem 0.21333333rem 0;
   padding: 0.17066667rem 0.46933333rem;
-  font-size: 0.512rem;
-  background-color: #eaeeef;
-  border-radius: 0.17066667rem;
-  color: #464f54;
-  font-weight: bold;
+  font-size: 0.59733333rem;
+  background-color: #fff;
+  border-radius: 0.64rem;
+  color: #88939a;
+  border: 2px solid #E1E1E1;
 }
 .gd-price {
   display: inline-block;
@@ -702,14 +702,14 @@ textarea.description.demand::-webkit-input-placeholder:before {
   font-family: arial;
   font-size: 0.64rem;
   margin-right: 0.064rem;
-  color: #f56d5d;
+  color: #f56d5d !important;
 }
 .gd-price .price {
-  color: #f56d5d;
+  color: #f56d5d !important;
   font-size: 0.85333333rem;
 }
 .gd-price .per {
-  color: #f56d5d;
+  color: #88939a;
   font-size: 0.512rem;
 }
 .fuwu-style .panel-title {
@@ -753,6 +753,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
   padding: 0.64rem;
   border-bottom: 1px solid #e5e5e5;
 }
+.panel-hd .panel-title {
+  color: #88939a;
+}
 /* Panel content */
 .panel-bd {
   padding: 0.64rem;
@@ -762,11 +765,11 @@ textarea.description.demand::-webkit-input-placeholder:before {
 }
 .panel-title {
   margin: 0;
-  font-size: 0.768rem;
-  color: #88939a;
+  font-size: 0.81066667rem;
+  color: #464f54;
 }
 .panel-title > a {
-  color: #88939a;
+  color: #464f54;
 }
 /* Panel footer */
 .panel-footer {
@@ -871,6 +874,9 @@ textarea.description.demand::-webkit-input-placeholder:before {
   padding: 0.64rem;
   border-bottom: 1px solid #e5e5e5;
 }
+.panel-group .panel-group-title .panel-title {
+  color: #88939a;
+}
 .panel-group .panel {
   border-top: 0;
   margin-bottom: 0;
@@ -881,7 +887,6 @@ textarea.description.demand::-webkit-input-placeholder:before {
 }
 .panel-title {
   font-size: 0.768rem;
-  font-weight: bold;
 }
 .panel-bd {
   font-size: 0.55466667rem;
@@ -1421,9 +1426,9 @@ input[type="button"].btn-block {
 } */
 @font-face {
   font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1448607664_643456.eot');
+  src: url('//at.alicdn.com/t/font_1449652718_0367107.eot');
   /* IE9*/
-  src: url('//at.alicdn.com/t/font_1448607664_643456.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1448607664_643456.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1448607664_643456.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1448607664_643456.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1449652718_0367107.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1449652718_0367107.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1449652718_0367107.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1449652718_0367107.svg#iconfont') format('svg');
   /* iOS 4.1- */
 }
 .iconfont {
@@ -1454,6 +1459,9 @@ input[type="button"].btn-block {
 }
 .icon-dingwei:before {
   content: "\e61c";
+}
+.icon-close:before {
+  content: "\e62a";
 }
 .icon-shoucang:before {
   content: "\e604";
@@ -1590,6 +1598,15 @@ input[type="button"].btn-block {
 .icon-xingyetubiaohuaban5js14:before {
   content: "\e61a";
 }
+.icon-xingyetubiao26:before {
+  content: "\e628";
+}
+.icon-xingyetubiao27:before {
+  content: "\e629";
+}
+.icon-xingyetubiao28:before {
+  content: "\e62b";
+}
 .gdm-dianpu-hd {
   background-image: url("/images/gd_dianpu_headbg_20151106_750x460.jpg");
   background-repeat: no-repeat;
@@ -1622,15 +1639,25 @@ input[type="button"].btn-block {
   font-size: 0.59733333rem;
 }
 ul.well-list {
-  padding: 0.64rem;
+  padding: 0.64rem 0;
   background-color: #fff;
+  float: left;
+  width: 100%;
 }
 ul.well-list li {
+  padding: 0 0.64rem;
   font-size: 0.59733333rem;
   color: #464f54;
 }
 ul.well-list li > span {
   color: #88939a;
+}
+ul.well-list li .fl {
+  width: 21%;
+}
+ul.well-list li .fr {
+  width: 79%;
+  text-align: left;
 }
 .panel-bd-list {
   overflow: hidden;
@@ -1658,6 +1685,7 @@ ul.well-list li > span {
   border: 1px solid #e5e5e5;
 }
 .gdm-dianpu-nav {
+  clear: both;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #fff;
@@ -1671,7 +1699,7 @@ ul.well-list li > span {
   clear: both;
 }
 .gdm-dianpu-nav li {
-  width: 50%;
+  width: 33.33333333%;
   float: left;
 }
 .gdm-dianpu-nav li > div {
